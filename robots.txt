@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://xf1st.netlify.app/sitemap.xml
