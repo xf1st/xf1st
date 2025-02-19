@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Привет, я xf1st</h1>
+            <p>Изучаю веб-разработку и дизайн</p>
+            <div class="scroll-down">
+                <span>Листай вниз</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>Обо мне</h2>
+            <p>Привет! Меня зовут xf1st, и я увлекаюсь веб-разработкой и дизайном. В свободное время я люблю изучать новые технологии, создавать интересные проекты и делиться своими знаниями с другими.</p>
+            <p>На этом сайте ты найдешь мои социальные сети и сможешь связаться со мной. Давай знакомиться!</p>
+        </div>
+    </section>
+
+    <section id="socials">
+        <div class="container">
+            <h2>Мои социальные сети</h2>
+            <div class="social-links">
+                <a href="https://t.me/xf1stww" target="_blank" class="social-link">
+                    <i class="fab fa-telegram"></i>
+                    <span>Telegram</span>
+                </a>
+                <a href="https://twitch.tv/xf1st_" target="_blank" class="social-link">
+                    <i class="fab fa-twitch"></i>
+                    <span>Twitch</span>
+                </a>
+                <a href="https://github.com/xf1st?tab=repositories" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Свяжись со мной</h2>
+            <form action="https://formspree.io/f/xanqaldv" method="POST" class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Ваш email" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Ваше сообщение" required></textarea>
+                    <i class="fas fa-comment"></i>
+                </div>
+                <button type="submit">Отправить <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 xf1st. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="#about">Обо мне</a>
+                <a href="#socials">Социальные сети</a>
+                <a href="#contact">Контакты</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
