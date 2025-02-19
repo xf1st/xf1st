@@ -100,31 +100,34 @@
         </div>
     </footer>
 
-<div class="card">
-    <div class="loader">
-      <p>loading</p>
-      <div class="words">
-        <span class="word">buttons</span>
-        <span class="word">forms</span>
-        <span class="word">switches</span>
-        <span class="word">cards</span>
-        <span class="word">buttons</span>
-      </div>
+
+    <div id="preloader">
+        <div class="loader"></div>
     </div>
-  </div>
-  
     <!-- Скрипт преловадера -->
     <script>
-    window.addEventListener('load', function () {
-        const preloader = document.getElementById('preloader');
-        setTimeout(() => {
-            preloader.style.opacity = '0';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500); // Задержка перед полным исчезновением
-        }, 1000); // Время показа прелоадера
-    });
-    </script>
+        // Функция для скрытия прелоадера
+        function hidePreloader() {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                // Плавное исчезновение
+                preloader.style.opacity = '0';
+                // Полное скрытие после завершения анимации
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500); // Задержка должна совпадать с временем transition в CSS
+            }
+        }
+        
+        // Скрытие прелоадера после полной загрузки страницы
+        window.addEventListener('load', function () {
+            hidePreloader();
+        });
+        
+        // Fallback: скрытие прелоадера через 5 секунд, если страница не загрузилась
+        setTimeout(hidePreloader, 5000);
+        </script>
+
     <!-- Скрипт общий -->
     <script src="scripts.js"></script>
 </body>
