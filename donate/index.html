@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Донаты xf1st</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="shortcut icon" href="ic2.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #ff4d4d, #f9cb28);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .donate-btn {
+            background: linear-gradient(45deg, #ff4d4d, #f9cb28);
+            box-shadow: 0 4px 15px rgba(255, 77, 77, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .donate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 77, 77, 0.6);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 77, 77, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+        }
+        
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .glow {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        
+        .neon-border {
+            position: relative;
+        }
+        
+        .neon-border::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff4d4d, #f9cb28, #ff4d4d);
+            background-size: 200% 200%;
+            z-index: -1;
+            border-radius: inherit;
+            animation: gradientBorder 3s ease infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes gradientBorder {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .donate-card-1 {
+            background: linear-gradient(135deg, 
+                        rgba(239, 71, 111, 0.5) 0%, 
+                        rgba(239, 71, 111, 0.4) 30%, 
+                        rgba(255, 209, 102, 0.4) 70%, 
+                        rgba(255, 209, 102, 0.5) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .donate-card-1::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+            animation: shine 8s infinite linear;
+        }
+        
+        .donate-card-2 {
+            background: linear-gradient(135deg, 
+                        rgba(6, 82, 221, 0.5) 0%, 
+                        rgba(6, 82, 221, 0.4) 30%, 
+                        rgba(131, 96, 195, 0.4) 70%, 
+                        rgba(131, 96, 195, 0.5) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .donate-card-2::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+            animation: shine 8s infinite linear reverse;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+        
+        .secondary-channel {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .secondary-channel::after {
+            content: 'Второй канал';
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 2px 30px;
+            font-size: 12px;
+            transform: rotate(45deg);
+            transform-origin: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .primary-channel {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .primary-channel::before {
+            content: 'Основной';
+            position: absolute;
+            top: 10px;
+            right: -35px;
+            width: 120px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: black;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 3px 0;
+            transform: rotate(45deg);
+            transform-origin: center;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            z-index: 1;
+        }
+        
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .thanks-card {
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(255, 20, 147, 0.2));
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+        
+        .thanks-icon {
+            background: linear-gradient(135deg, #ff4d4d, #ff1493);
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .modal-gradient {
+            background: linear-gradient(135deg, #1a237e, #0d47a1);
+        }
+        
+        .tiktok-bg {
+            background: linear-gradient(135deg, #010101, #25F4EE, #FE2C55);
+            background-size: 200% 200%;
+            animation: tiktokGradient 4s ease infinite;
+        }
+        
+        @keyframes tiktokGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .github-bg {
+            background: linear-gradient(135deg, #24292e, #3a424a);
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="content">
+        <div class="container mx-auto px-4 py-12">
+            <!-- Header -->
+            <header class="text-center mb-16">
+                <div class="floating inline-block mb-8 neon-border rounded-full">
+                    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/78dfb8b8-b809-4a0a-9e35-65fcea44e3b6-profile_image-300x300.jpeg" alt="xf1st Avatar" class="rounded-full w-32 h-32 object-cover border-4 border-white pulse">
+                </div>
+                <h1 class="text-5xl font-bold mb-4 gradient-text glow">xf1st</h1>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">Поддержите мой контент и помогите развиваться каналу!</p>
+            </header>
+            
+            <!-- Donation Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
+                <div class="card donate-card-1 rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="icon-circle bg-yellow-500 mr-4">
+                            <i class="fas fa-ruble-sign text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">DonatePay</h3>
+                    </div>
+                    <p class="text-white mb-6 opacity-90">Быстрые и удобные донаты с минимальной комиссией</p>
+                    <a href="https://new.donatepay.ru/@xf1st" target="_blank" class="donate-btn inline-block px-8 py-3 rounded-full font-bold text-white">
+                        Поддержать <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="card donate-card-2 rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="icon-circle bg-red-500 mr-4">
+                            <i class="fas fa-heart text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">DonationAlerts</h3>
+                    </div>
+                    <p class="text-white mb-6 opacity-90">Популярная платформа для донатов с уведомлениями</p>
+                    <a href="https://www.donationalerts.com/r/xf1st" target="_blank" class="donate-btn inline-block px-8 py-3 rounded-full font-bold text-white">
+                        Поддержать <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-center mb-8 gradient-text">Мои социальные сети</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <a href="https://twitch.tv/xf1st_" target="_blank" class="social-icon bg-gradient-to-br from-purple-800 to-purple-600 rounded-xl p-6 text-center primary-channel">
+                        <i class="fab fa-twitch text-4xl mb-3"></i>
+                        <p class="font-medium">Twitch #1</p>
+                    </a>
+                    
+                    <a href="https://twitch.tv/xf1stw" target="_blank" class="social-icon bg-gradient-to-br from-purple-800 to-purple-600 rounded-xl p-6 text-center secondary-channel">
+                        <i class="fab fa-twitch text-4xl mb-3"></i>
+                        <p class="font-medium">Twitch #2</p>
+                    </a>
+                    
+                    <a href="https://xf1stww.t.me" target="_blank" class="social-icon bg-gradient-to-br from-blue-600 to-blue-400 rounded-xl p-6 text-center">
+                        <i class="fab fa-telegram text-4xl mb-3"></i>
+                        <p class="font-medium">Telegram</p>
+                    </a>
+                    
+                    <a href="https://www.tiktok.com/@rbmpq" target="_blank" class="social-icon tiktok-bg rounded-xl p-6 text-center">
+                        <i class="fab fa-tiktok text-4xl mb-3"></i>
+                        <p class="font-medium">TikTok</p>
+                    </a>
+                    
+                    <a href="https://github.com/xf1st?tab=repositories" target="_blank" class="social-icon github-bg rounded-xl p-6 text-center">
+                        <i class="fab fa-github text-4xl mb-3"></i>
+                        <p class="font-medium">GitHub</p>
+                    </a>
+                    
+                    <div class="social-icon thanks-card rounded-xl p-6 text-center cursor-pointer transform hover:scale-105 transition-all" onclick="showThanks()">
+                        <div class="thanks-icon mx-auto mb-3">
+                            <i class="fas fa-hands-helping text-white text-lg"></i>
+                        </div>
+                        <p class="font-medium">Спасибо!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Supporters -->
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8 gradient-text">Последние донатеры</h2>
+                <div class="card bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl p-6">
+                    <div class="grid grid-cols-2 md:grid-cors-4 gap-4" id="supporters">
+                        <!-- This would be populated with JS -->
+                        <div class="text-center p-4 bg-gray-700 rounded-lg animate-pulse">
+                            <div class="h-6 w-3/4 bg-gray-600 rounded mx-auto mb-2"></div>
+                            <div class="h-4 w-1/2 bg-gray-600 rounded mx-auto"></div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-700 rounded-lg animate-pulse">
+                            <div class="h-6 w-3/4 bg-gray-600 rounded mx-auto mb-2"></div>
+                            <div class="h-4 w-1/2 bg-gray-600 rounded mx-auto"></div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-700 rounded-lg animate-pulse">
+                            <div class="h-6 w-3/4 bg-gray-600 rounded mx-auto mb-2"></div>
+                            <div class="h-4 w-1/2 bg-gray-600 rounded mx-auto"></div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-700 rounded-lg animate-pulse">
+                            <div class="h-6 w-3/4 bg-gray-600 rounded mx-auto mb-2"></div>
+                            <div class="h-4 w-1/2 bg-gray-600 rounded mx-auto"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="py-8 text-center text-gray-400">
+            <p>© 2025 xf1st. Все права защищены. Соотрудничество: xf1stads@gmail.com</p>
+        </footer>
+    </div>
+
+    <script>
+        // Particles.js config
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Mock supporters data
+        const supporters = [
+            { name: "Иван Иванов", amount: "500 ₽" },
+            { name: "Алексей Петров", amount: "1000 ₽" },
+            { name: "Мария Сидорова", amount: "300 ₽" },
+            { name: "Дмитрий Смирнов", amount: "1500 ₽" }
+        ];
+
+        // Populate supporters
+        setTimeout(() => {
+            const supportersContainer = document.getElementById('supporters');
+            supportersContainer.innerHTML = '';
+            
+            supporters.forEach(supporter => {
+                const supporterEl = document.createElement('div');
+                supporterEl.className = 'text-center p-4 bg-gray-700 rounded-lg transform hover:scale-105 transition-all';
+                supporterEl.innerHTML = `
+                    <h3 class="font-bold text-lg">${supporter.name}</h3>
+                    <p class="text-yellow-400">${supporter.amount}</p>
+                `;
+                supportersContainer.appendChild(supporterEl);
+            });
+        }, 1500);
+
+        // Thank you modal
+        function showThanks() {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-70';
+            modal.innerHTML = `
+                <div class="modal-gradient rounded-2xl p-8 max-w-md mx-4 relative card">
+                    <button onclick="this.parentElement.parentElement.remove()" class="absolute top-4 right-4 text-gray-300 hover:text-white">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                    <div class="text-center">
+                        <div class="icon-circle bg-blue-600 inline-block mb-4">
+                            <i class="fas fa-hands-helping text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-white">Спасибо за поддержку!</h3>
+                        <p class="text-gray-300 mb-6">Ваше внимание и участие очень важны для меня!</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://twitch.tv/xf1st_" target="_blank" class="social-icon bg-purple-600 hover:bg-purple-700 p-3 rounded-full">
+                                <i class="fab fa-twitch"></i>
+                            </a>
+                            <a href="https://twitch.tv/xf1stw" target="_blank" class="social-icon bg-purple-600 hover:bg-purple-700 p-3 rounded-full">
+                                <i class="fab fa-twitch"></i>
+                            </a>
+                            <a href="https://xf1stww.t.me" target="_blank" class="social-icon bg-blue-500 hover:bg-blue-600 p-3 rounded-full">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@rbmpq" target="_blank" class="social-icon tiktok-bg hover:opacity-90 p-3 rounded-full">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="https://github.com/xf1st?tab=repositories" target="_blank" class="social-icon github-bg hover:opacity-90 p-3 rounded-full">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+    </script>
+</body>
+</html>
