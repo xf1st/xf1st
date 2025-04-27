@@ -312,3 +312,10 @@ footer {
         font-size: 0.8rem;
     }
 }
+
+.site-icon {
+    width: 54px;
+    height: 54px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
