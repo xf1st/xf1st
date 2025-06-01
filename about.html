@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - Академический сервис</title>
+    <link rel="shortcut icon" href="assets/logo/logo.png" type="image/x-icon">
+    <link rel="icon" href="assets/logo/logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#00236a', secondary: '#002f8f' }, borderRadius: { 'none': '0px', 'sm': '0px', DEFAULT: '0px', 'md': '0px', 'lg': '0px', 'xl': '0px', '2xl': '0px', '3xl': '0px', 'full': '0px', 'button': '0px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        body {
+            font-family: 'Rubik', sans-serif;
+        }
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #00236A;
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 17px;
+            top: 36px;
+            bottom: -2rem;
+            width: 2px;
+            background-color: #00236a;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f9f7f4]">
+    <header class="bg-primary text-white relative">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center" data-aos="fade-right">
+                <div class="w-10 h-10 flex items-center justify-center mr-2">
+                </div>
+                <a href="index.html"><span class="text-2xl font-bold">xf1st</span></a>
+            </div>
+            <nav class="hidden md:flex space-x-6" data-aos="fade-down" data-aos-delay="100">
+                <a href="index.html" class="hover:text-gray-300 relative group">Главная страница
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </a>
+                <a href="index.html#services" class="hover:text-gray-300 relative group">Услуги
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </a>
+                <a href="about.html" class="text-white font-medium relative group">О нас
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </a>
+                <a href="contact.html" class="hover:text-gray-300 relative group">Контакты
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </a>
+            </nav>
+            <div class="flex items-center" data-aos="fade-left" data-aos-delay="200">
+                <a href="auth.html"
+                    data-readdy="true"
+                    class="px-4 py-2 text-primary bg-white rounded-button whitespace-nowrap hover:bg-gray-100 transition hidden md:block">FAQ</a>
+                <button id="mobile-menu-button" aria-label="Открыть меню" class="md:hidden text-white focus:outline-none ml-4">
+                    <i class="ri-menu-line ri-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 w-full bg-primary/95 backdrop-blur-sm z-50 shadow-lg">
+            <nav class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-white hover:bg-white/10 p-2 rounded-md">Главная страница</a>
+                <a href="index.html#services" class="text-white hover:bg-white/10 p-2 rounded-md">Услуги</a>
+                <a href="about.html" class="text-white bg-white/10 p-2 rounded-md font-medium">О нас</a>
+                <a href="contact.html" class="text-white hover:bg-white/10 p-2 rounded-md">Контакты</a>
+                <a href="auth.html" class="text-white hover:bg-white/10 p-2 rounded-md">FAQ</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="relative bg-primary text-white py-20 overflow-hidden">
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-3xl" data-aos="fade-up">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">О нашей компании</h1>
+                    <p class="text-xl font-light mb-8">Мы помогаем студентам достигать академических высот уже более 10 лет. Наша команда профессионалов специализируется на написании дипломных работ высочайшего качества.</p>
+                    <p class="text-lg font-light mb-8">Наша миссия — предоставлять качественные образовательные услуги, которые помогают студентам успешно завершить обучение и получить престижную квалификацию.</p>
+                    <button
+                        class="bg-white text-primary px-6 py-3 rounded-button hover:bg-gray-100 transition whitespace-nowrap font-medium"
+                        data-aos="fade-up" data-aos-delay="100">Узнать больше
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-[#f9f7f4]">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold text-primary">История нашей компании</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Путь становления и развития нашей компании — это история постоянного совершенствования и стремления к высоким стандартам академического письма.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="space-y-12 relative">
+                        <div class="relative pl-14 timeline-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="absolute left-0 top-0 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center shadow-md">
+                                <i class="ri-flag-line"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary">2012 — Основание компании</h3>
+                                <p class="mt-2 text-gray-600 font-light">Компания была основана группой преподавателей и научных сотрудников с целью помощи студентам в написании качественных дипломных работ.</p>
+                            </div>
+                        </div>
+                        <div class="relative pl-14 timeline-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="absolute left-0 top-0 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center shadow-md">
+                                <i class="ri-team-line"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary">2015 — Расширение команды</h3>
+                                <p class="mt-2 text-gray-600 font-light">К нам присоединились специалисты из различных научных областей, что позволило значительно расширить спектр предлагаемых услуг.</p>
+                            </div>
+                        </div>
+                        <div class="relative pl-14 timeline-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="absolute left-0 top-0 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center shadow-md">
+                                <i class="ri-global-line"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary">2018 — Выход на всероссийский уровень</h3>
+                                <p class="mt-2 text-gray-600 font-light">Мы начали сотрудничать со студентами из всех регионов России, создав удобную онлайн-платформу для взаимодействия.</p>
+                            </div>
+                        </div>
+                        <div class="relative pl-14 timeline-item" data-aos="fade-up" data-aos-delay="400">
+                             <div class="absolute left-0 top-0 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center shadow-md">
+                                <i class="ri-award-line"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary">2021 — Признание и награды</h3>
+                                <p class="mt-2 text-gray-600 font-light">Наша компания получила признание как один из лучших сервисов академической поддержки по результатам независимого исследования.</p>
+                            </div>
+                        </div>
+                        <div class="relative pl-14" data-aos="fade-up" data-aos-delay="500">
+                            <div class="absolute left-0 top-0 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center shadow-md">
+                                <i class="ri-rocket-line"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary">2025 — Настоящее время</h3>
+                                <p class="mt-2 text-gray-600 font-light">Сегодня мы продолжаем развиваться, внедряя инновационные методики и технологии для обеспечения наивысшего качества наших услуг.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold text-primary">Наши преимущества</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Почему тысячи студентов выбирают именно нас для написания своих дипломных работ</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="ri-user-star-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Опытные специалисты</h3>
+                        <p class="text-gray-600 font-light flex-grow">Наши авторы — кандидаты и доктора наук с опытом преподавания в ведущих вузах России.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                           <i class="ri-time-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Соблюдение сроков</h3>
+                        <p class="text-gray-600 font-light flex-grow">Мы гарантируем своевременное выполнение заказа без ущерба для качества работы.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                           <i class="ri-shield-check-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Оригинальность</h3>
+                        <p class="text-gray-600 font-light flex-grow">Каждая работа проходит проверку на плагиат и соответствует высоким требованиям уникальности.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="ri-customer-service-2-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Поддержка 24/7</h3>
+                        <p class="text-gray-600 font-light flex-grow">Наша служба поддержки доступна круглосуточно для решения любых вопросов по вашему заказу.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full" data-aos="fade-up" data-aos-delay="500">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                           <i class="ri-secure-payment-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Безопасные платежи</h3>
+                        <p class="text-gray-600 font-light flex-grow">Мы используем защищенные системы оплаты и гарантируем конфиденциальность ваших данных.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full" data-aos="fade-up" data-aos-delay="600">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="ri-edit-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Бесплатные правки</h3>
+                        <p class="text-gray-600 font-light flex-grow">Мы предоставляем неограниченное количество бесплатных доработок до полного соответствия требованиям.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-primary text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold">Наши достижения в цифрах</h2>
+                    <p class="text-lg font-light mt-4 max-w-3xl mx-auto">За годы работы мы помогли тысячам студентов успешно защитить дипломные работы</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-4xl font-bold mb-2">10+</div>
+                        <p class="text-lg font-light">Лет опыта</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-4xl font-bold mb-2">5000+</div>
+                        <p class="text-lg font-light">Выполненных работ</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-4xl font-bold mb-2">98%</div>
+                        <p class="text-lg font-light">Довольных клиентов</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-4xl font-bold mb-2">150+</div>
+                        <p class="text-lg font-light">Экспертов</p>
+                    </div>
+                </div>
+                <div class="mt-16" data-aos="fade-up" data-aos-delay="500">
+                    <div id="satisfaction-chart" class="w-full h-80"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold text-primary">Как мы работаем</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Наш процесс работы над дипломными проектами прозрачен и эффективен</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm relative" data-aos="fade-up" data-aos-delay="100">
+                        <div class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg shadow-md">1</div>
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                             <i class="ri-chat-1-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-primary text-center mb-3">Обсуждение требований</h3>
+                        <p class="text-gray-600 text-center font-light text-sm">Мы детально обсуждаем все требования к работе, сроки и особенности выполнения.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm relative" data-aos="fade-up" data-aos-delay="200">
+                         <div class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg shadow-md">2</div>
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <i class="ri-user-search-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-primary text-center mb-3">Подбор специалиста</h3>
+                        <p class="text-gray-600 text-center font-light text-sm">Мы подбираем эксперта, специализирующегося именно в вашей области исследования.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm relative" data-aos="fade-up" data-aos-delay="300">
+                        <div class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg shadow-md">3</div>
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <i class="ri-draft-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-primary text-center mb-3">Написание работы</h3>
+                        <p class="text-gray-600 text-center font-light text-sm">Автор приступает к написанию работы, регулярно отчитываясь о ходе выполнения.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm relative" data-aos="fade-up" data-aos-delay="400">
+                        <div class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg shadow-md">4</div>
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+                           <i class="ri-check-double-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-primary text-center mb-3">Проверка и доработка</h3>
+                        <p class="text-gray-600 text-center font-light text-sm">Готовая работа проходит проверку на плагиат и при необходимости дорабатывается.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-[#f9f7f4]">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold text-[#00236a] text-left">Отзывы наших клиентов</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <div class="bg-transparent p-0 shadow-none" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex text-[#0046d1] mb-3">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                        <p class="text-[#003297] font-normal text-base mb-3">Рейтинг: 5 из 5.</p>
+                        <p class="text-[#003297] font-light text-base mb-4">«Очень благодарна за помощь с дипломной работой! Все было выполнено на высшем уровне, с учетом всех моих пожеланий. Защитилась на отлично!»</p>
+                        <p class="font-medium text-[#003297] text-base mb-3">Анастасия Викторовна</p>
+                    </div>
+                    <div class="bg-transparent p-0 shadow-none" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex text-[#0046d1] mb-3">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                        </div>
+                        <p class="text-[#003297] font-normal text-base mb-3">Рейтинг: 5 из 5.</p>
+                        <p class="text-[#003297] font-light text-base mb-4">«Сотрудничество превзошло все мои ожидания. Работа была выполнена раньше срока, а автор всегда был на связи и учитывал все мои комментарии. Рекомендую!»</p>
+                        <p class="font-medium text-[#003297] text-base mb-3">Максим Игоревич</p>
+                    </div>
+                    <div class="bg-transparent p-0 shadow-none" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex text-[#0046d1] mb-3">
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-fill"></i>
+                           <i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="text-[#003297] font-normal text-base mb-3">Рейтинг: 4.5 из 5.</p>
+                        <p class="text-[#003297] font-light text-base mb-4">«Обратился за помощью в написании дипломной работы по юриспруденции. Результат превзошел ожидания — работа получила высокую оценку на защите. Спасибо за профессионализм!»</p>
+                        <p class="font-medium text-[#003297] text-base mb-3">Артем Николаевич</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-primary text-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2" data-aos="fade-right">
+                        <h2 class="text-3xl font-bold mb-6">Наша миссия и ценности</h2>
+                        <p class="text-lg font-light mb-6">Мы стремимся помогать студентам в достижении их академических целей, предоставляя качественные услуги по написанию дипломных работ.</p>
+                        <div class="space-y-5 mt-8">
+                            <div class="flex items-start" data-aos="fade-up" data-aos-delay="100">
+                                <i class="ri-check-line ri-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-1">Качество</h3>
+                                    <p class="font-light">Мы гарантируем высокое качество каждой выполненной работы, соответствующее академическим стандартам.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start" data-aos="fade-up" data-aos-delay="200">
+                               <i class="ri-check-line ri-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-1">Конфиденциальность</h3>
+                                    <p class="font-light">Мы обеспечиваем полную конфиденциальность всех данных наших клиентов и деталей заказов.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start" data-aos="fade-up" data-aos-delay="300">
+                                <i class="ri-check-line ri-xl mr-4 mt-1"></i>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-1">Индивидуальный подход</h3>
+                                    <p class="font-light">Мы учитываем все требования и пожелания каждого клиента, обеспечивая персонализированный подход.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12" data-aos="fade-left" data-aos-delay="200">
+                        <img src="https://readdy.ai/api/search-image?query=A%2520modern%2520university%2520campus%2520with%2520students%2520walking%2520between%2520buildings%2C%2520academic%2520atmosphere%2C%2520clean%2520architecture%2C%2520bright%2520day%2C%2520professional%2520educational%2520environment&width=600&height=500&seq=1005&orientation=landscape"
+                            alt="Университетский кампус" class="rounded-lg shadow-lg w-full h-auto max-h-[450px]">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-[#f9f7f4]">
+            <div class="container mx-auto px-4">
+                <div class="rounded-lg p-8 md:p-12 text-center max-w-4xl mx-auto" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Готовы заказать дипломную работу?</h2>
+                    <p class="text-lg text-gray-600 mb-8">Свяжитесь с нами сегодня, и мы поможем вам успешно завершить ваше обучение!</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="contact.html"
+                            data-readdy="true"
+                            class="bg-primary text-white px-8 py-3 rounded-button hover:bg-primary/90 transition whitespace-nowrap font-medium">Связаться с нами
+                        </a>
+                        <a href="contact.html"
+                            class="bg-white border border-primary text-primary px-8 py-3 rounded-button hover:bg-gray-50 transition whitespace-nowrap font-medium">Узнать стоимость
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Контакты</h3>
+                    <div class="space-y-2">
+                        <p class="flex items-center">
+                            <i class="ri-map-pin-line mr-2"></i>
+                            <a href="https://maps.google.com/?q=140960, Москва" 
+                               class="link-hover hover:text-gray-300 transition-colors duration-300">
+                                140960, Москва
+                            </a>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="ri-mail-line mr-2"></i>
+                            <a href="mailto:xf1stads@gmail.com" 
+                               class="link-hover hover:text-gray-300 transition-colors duration-300">
+                                xf1stads@gmail.com
+                            </a>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="ri-phone-line mr-2"></i>
+                            <a href="tel:+79009009090" 
+                               class="phone-mask link-hover hover:text-gray-300 transition-colors duration-300">
+                                (900) 900-90-90
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Навигация</h3>
+                    <nav class="space-y-2">
+                        <a href="index.html" class="block link-hover hover:text-gray-300 transition-colors duration-300">Главная страница</a>
+                        <a href="index.html#services" class="block link-hover hover:text-gray-300 transition-colors duration-300">Услуги</a>
+                        <a href="about.html" class="block link-hover hover:text-gray-300 transition-colors duration-300">О нас</a>
+                        <a href="contact.html" class="block link-hover hover:text-gray-300 transition-colors duration-300">Контакты</a>
+                    </nav>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Социальные сети</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/79017566764" class="link-hover hover:text-gray-300 transition-colors duration-300">
+                            <i class="ri-whatsapp-line ri-xl"></i>
+                        </a>
+                        <a href="https://t.me/maybeskyy" class="link-hover hover:text-gray-300 transition-colors duration-300">
+                            <i class="ri-telegram-line ri-xl"></i>
+                        </a>
+                        <a href="https://vk.com/maybeprincess" class="link-hover hover:text-gray-300 transition-colors duration-300">
+                            <i class="ri-vk-line ri-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/10 text-center">
+                <p>&copy; 2025 xf1st. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var chartDom = document.getElementById('satisfaction-chart');
+            if (chartDom) {
+                var myChart = echarts.init(chartDom);
+                var option = {
+                    animation: false,
+                    tooltip: {
+                        trigger: 'axis',
+                        backgroundColor: 'rgba(0, 35, 106, 0.9)',
+                        borderColor: 'rgba(255, 255, 255, 0.3)',
+                        textStyle: {
+                            color: '#ffffff'
+                        }
+                    },
+                    legend: {
+                        data: ['Удовлетворенность клиентов', 'Количество заказов'],
+                        textStyle: {
+                            color: '#ffffff'
+                        }
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        top: '15%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: ['2018', '2019', '2020', '2021', '2022', '2023', '2025'],
+                        axisLine: {
+                            lineStyle: {
+                                color: 'rgba(255, 255, 255, 0.3)'
+                            }
+                        },
+                        axisLabel: {
+                            color: '#ffffff'
+                        }
+                    },
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: 'Удовлетворенность (%)',
+                            min: 80,
+                            max: 100,
+                            nameTextStyle: { color: 'rgba(255, 255, 255, 0.7)'},
+                            axisLine: {
+                                lineStyle: {
+                                    color: 'rgba(255, 255, 255, 0.3)'
+                                }
+                            },
+                            axisLabel: {
+                                color: '#ffffff',
+                                formatter: '{value}%'
+                            },
+                            splitLine: {
+                                lineStyle: {
+                                    color: 'rgba(255, 255, 255, 0.1)'
+                                }
+                            }
+                        },
+                        {
+                            type: 'value',
+                            name: 'Заказы',
+                            nameTextStyle: { color: 'rgba(255, 255, 255, 0.7)'},
+                            axisLine: {
+                                lineStyle: {
+                                    color: 'rgba(255, 255, 255, 0.3)'
+                                }
+                            },
+                            axisLabel: {
+                                color: '#ffffff'
+                            },
+                            splitLine: {
+                                show: false
+                            }
+                        }
+                    ],
+                    series: [
+                        {
+                            name: 'Удовлетворенность клиентов',
+                            type: 'line',
+                            smooth: true,
+                            symbol: 'none',
+                            lineStyle: {
+                                width: 3,
+                                color: '#ffffff'
+                            },
+                            areaStyle: {
+                                color: {
+                                    type: 'linear',
+                                    x: 0,
+                                    y: 0,
+                                    x2: 0,
+                                    y2: 1,
+                                    colorStops: [
+                                        {
+                                            offset: 0,
+                                            color: 'rgba(255, 255, 255, 0.2)'
+                                        },
+                                        {
+                                            offset: 1,
+                                            color: 'rgba(255, 255, 255, 0.05)'
+                                        }
+                                    ]
+                                }
+                            },
+                            data: [88, 90, 92, 94, 95, 97, 98]
+                        },
+                        {
+                            name: 'Количество заказов',
+                            type: 'bar',
+                            yAxisIndex: 1,
+                            itemStyle: {
+                                color: 'rgba(255, 255, 255, 0.5)',
+                                borderRadius: [2, 2, 0, 0]
+                            },
+                            barWidth: '40%',
+                            data: [320, 420, 560, 780, 950, 1200, 1450]
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                window.addEventListener('resize', function () {
+                    myChart.resize();
+                });
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Обработка кликов по контактной информации
+        document.addEventListener('DOMContentLoaded', function() {
+            // Обработка клика по адресу
+            const addressLinks = document.querySelectorAll('a[href*="maps.google.com"]');
+            addressLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const address = this.getAttribute('href').split('q=')[1];
+                    window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`, '_blank');
+                });
+            });
+
+            // Обработка клика по телефону
+            const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+            phoneLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const phone = this.getAttribute('href').replace('tel:', '');
+                    window.open(`tel:${phone}`, '_self');
+                });
+            });
+
+            // Обработка клика по email
+            const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+            emailLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const email = this.getAttribute('href').replace('mailto:', '');
+                    window.open(`mailto:${email}`, '_self');
+                });
+            });
+        });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const menuButton = document.getElementById('mobile-menu-button');
+          const mobileMenu = document.getElementById('mobile-menu');
+          const menuIcon = menuButton ? menuButton.querySelector('i') : null;
+
+          if (menuButton && mobileMenu && menuIcon) {
+              menuButton.addEventListener('click', () => {
+                  const isHidden = mobileMenu.classList.toggle('hidden');
+                  
+                  if (!isHidden) {
+                      menuIcon.classList.remove('ri-menu-line');
+                      menuIcon.classList.add('ri-close-line');
+                  } else {
+                      menuIcon.classList.remove('ri-close-line');
+                      menuIcon.classList.add('ri-menu-line');
+                  }
+              });
+
+              const mobileLinks = mobileMenu.querySelectorAll('a');
+              mobileLinks.forEach(link => {
+                  link.addEventListener('click', () => {
+                      mobileMenu.classList.add('hidden'); 
+                      menuIcon.classList.remove('ri-close-line');
+                      menuIcon.classList.add('ri-menu-line');
+                  });
+              });
+          }
+      });
+    </script>
+</body>
+</html>

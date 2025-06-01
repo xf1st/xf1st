@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>О нас - Дипломные работы на заказ</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#00236A',secondary:''},borderRadius:{'none':'0px','sm':'0px',DEFAULT:'0px','md':'0px','lg':'0px','xl':'0px','2xl':'0px','3xl':'0px','full':'0px','button':'0px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Arial', sans-serif;
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #00236A;
+}
+.timeline-item:not(:last-child)::after {
+content: '';
+position: absolute;
+left: 17px;
+top: 30px;
+bottom: -30px;
+width: 2px;
+background-color: #00236A;
+}
+</style>
+</head>
+<body class="min-h-screen bg-gray-50">
+<!-- Шапка сайта -->
+<header class="bg-primary text-white">
+<div class="container mx-auto px-4 py-3">
+<div class="flex justify-between items-center">
+<div class="flex items-center space-x-2">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-book-open-line ri-2x"></i>
+</div>
+<a href="#" class="text-xl font-['Pacifico']">Дипломные работы</a>
+</div>
+<nav class="hidden md:flex space-x-6">
+<a href="#" class="hover:text-gray-300 transition">Главная страница</a>
+<a href="https://readdy.ai/home/2e0d8074-547f-423d-8b38-7739c09d09e5/d835270f-7625-42a6-bb53-590e2ee2dff9" data-readdy="true" class="hover:text-gray-300 transition">Контакты</a>
+<a href="#" class="border-b-2 border-white pb-1 hover:text-gray-300 transition">О нас</a>
+</nav>
+<div class="flex items-center space-x-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-user-line"></i>
+</div>
+<span class="hidden md:inline-block">Привет, Сергей Юрьевич</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Основной контент -->
+<main>
+<!-- Секция с баннером -->
+<section class="relative bg-primary text-white py-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div style="background-image: url('https://readdy.ai/api/search-image?query=A%2520modern%2520university%2520library%2520with%2520students%2520studying%2520at%2520desks%2C%2520bookshelves%2520in%2520the%2520background%2C%2520soft%2520natural%2520light%2520coming%2520through%2520large%2520windows%2C%2520academic%2520atmosphere%2C%2520clean%2520and%2520professional%2520environment%2C%2520blue%2520color%2520scheme%2520matching%2520with%2520%252300236A%2C%2520gradient%2520fading%2520to%2520solid%2520blue%2520on%2520the%2520left%2520side&width=1600&height=800&seq=1001&orientation=landscape'); background-size: cover; background-position: center; opacity: 0.2; height: 100%; width: 100%;"></div>
+</div>
+<div class="container mx-auto px-4 relative z-10">
+<div class="max-w-3xl">
+<h1 class="text-4xl md:text-5xl font-bold mb-6">О нашей компании</h1>
+<p class="text-xl mb-8">Мы помогаем студентам достигать академических высот уже более 10 лет. Наша команда профессионалов специализируется на написании дипломных работ высочайшего качества.</p>
+<p class="text-lg mb-8">Наша миссия — предоставлять качественные образовательные услуги, которые помогают студентам успешно завершить обучение и получить престижную квалификацию.</p>
+<button class="bg-white text-primary px-6 py-3 rounded-button hover:bg-gray-100 transition whitespace-nowrap font-medium">Узнать больше</button>
+</div>
+</div>
+</section>
+<!-- История компании -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">История нашей компании</h2>
+<p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Путь становления и развития нашей компании — это история постоянного совершенствования и стремления к высоким стандартам академического письма.</p>
+</div>
+<div class="max-w-4xl mx-auto">
+<div class="space-y-12">
+<div class="relative pl-14 timeline-item">
+<div class="absolute left-0 top-0 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center">
+<div class="w-9 h-9 flex items-center justify-center">
+<i class="ri-flag-line"></i>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-gray-800">2012 — Основание компании</h3>
+<p class="mt-2 text-gray-600">Компания была основана группой преподавателей и научных сотрудников с целью помощи студентам в написании качественных дипломных работ.</p>
+</div>
+</div>
+<div class="relative pl-14 timeline-item">
+<div class="absolute left-0 top-0 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center">
+<div class="w-9 h-9 flex items-center justify-center">
+<i class="ri-team-line"></i>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-gray-800">2015 — Расширение команды</h3>
+<p class="mt-2 text-gray-600">К нам присоединились специалисты из различных научных областей, что позволило значительно расширить спектр предлагаемых услуг.</p>
+</div>
+</div>
+<div class="relative pl-14 timeline-item">
+<div class="absolute left-0 top-0 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center">
+<div class="w-9 h-9 flex items-center justify-center">
+<i class="ri-global-line"></i>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-gray-800">2018 — Выход на всероссийский уровень</h3>
+<p class="mt-2 text-gray-600">Мы начали сотрудничать со студентами из всех регионов России, создав удобную онлайн-платформу для взаимодействия.</p>
+</div>
+</div>
+<div class="relative pl-14 timeline-item">
+<div class="absolute left-0 top-0 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center">
+<div class="w-9 h-9 flex items-center justify-center">
+<i class="ri-award-line"></i>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-gray-800">2021 — Признание и награды</h3>
+<p class="mt-2 text-gray-600">Наша компания получила признание как один из лучших сервисов академической поддержки по результатам независимого исследования.</p>
+</div>
+</div>
+<div class="relative pl-14">
+<div class="absolute left-0 top-0 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center">
+<div class="w-9 h-9 flex items-center justify-center">
+<i class="ri-rocket-line"></i>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-gray-800">2023 — Настоящее время</h3>
+<p class="mt-2 text-gray-600">Сегодня мы продолжаем развиваться, внедряя инновационные методики и технологии для обеспечения наивысшего качества наших услуг.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Наши преимущества -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">Наши преимущества</h2>
+<p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Почему тысячи студентов выбирают именно нас для написания своих дипломных работ</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-user-star-line ri-lg"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-3">Опытные специалисты</h3>
+<p class="text-gray-600 flex-grow">Наши авторы — кандидаты и доктора наук с опытом преподавания в ведущих вузах России.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-time-line ri-lg"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-3">Соблюдение сроков</h3>
+<p class="text-gray-600 flex-grow">Мы гарантируем своевременное выполнение заказа без ущерба для качества работы.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-shield-check-line ri-lg"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-3">Оригинальность</h3>
+<p class="text-gray-600 flex-grow">Каждая работа проходит проверку на плагиат и соответствует высоким требованиям уникальности.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-customer-service-2-line ri-lg"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-3">Поддержка 24/7</h3>
+<p class="text-gray-600 flex-grow">Наша служба поддержки доступна круглосуточно для решения любых вопросов по вашему заказу.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-secure-payment-line ri-lg"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-3">Безопасные платежи</h3>
+<p class="text-gray-600 flex-grow">Мы используем защищенные системы оплаты и гарантируем конфиденциальность ваших данных.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-edit-line ri-lg"></i>
+</div>
+</div>
+<h3 class="text-xl font-bold text-gray-800 mb-3">Бесплатные правки</h3>
+<p class="text-gray-600 flex-grow">Мы предоставляем неограниченное количество бесплатных доработок до полного соответствия требованиям.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Статистика -->
+<section class="py-16 bg-primary text-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold">Наши достижения в цифрах</h2>
+<p class="text-lg mt-4 max-w-3xl mx-auto">За годы работы мы помогли тысячам студентов успешно защитить дипломные работы</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<div class="text-4xl font-bold mb-2">10+</div>
+<p class="text-lg">Лет опыта</p>
+</div>
+<div>
+<div class="text-4xl font-bold mb-2">5000+</div>
+<p class="text-lg">Выполненных работ</p>
+</div>
+<div>
+<div class="text-4xl font-bold mb-2">98%</div>
+<p class="text-lg">Довольных клиентов</p>
+</div>
+<div>
+<div class="text-4xl font-bold mb-2">150+</div>
+<p class="text-lg">Экспертов</p>
+</div>
+</div>
+<div class="mt-16">
+<div id="satisfaction-chart" class="w-full h-80"></div>
+</div>
+</div>
+</section>
+<!-- Команда экспертов -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">Наша команда экспертов</h2>
+<p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Познакомьтесь с некоторыми из наших ведущих специалистов, которые помогут вам с написанием дипломной работы</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+<img src="https://readdy.ai/api/search-image?query=Professional%2520middle-aged%2520man%2520with%2520glasses%2520in%2520formal%2520attire%2520against%2520neutral%2520background%2C%2520academic%2520portrait%2C%2520serious%2520expression%2C%2520high%2520quality%2520professional%2520headshot%2C%2520clean%2520lighting&width=400&height=400&seq=1002&orientation=squarish" alt="Андрей Петрович" class="w-full h-64 object-cover object-top">
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-800">Андрей Петрович</h3>
+<p class="text-primary font-medium">Кандидат экономических наук</p>
+<p class="text-gray-600 mt-3">Специализация: финансовый менеджмент, банковское дело, инвестиционный анализ</p>
+<p class="text-gray-600 mt-2">Опыт работы: 12 лет</p>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+<img src="https://readdy.ai/api/search-image?query=Professional%2520woman%2520in%2520her%252040s%2520with%2520shoulder-length%2520hair%2520in%2520business%2520attire%2520against%2520neutral%2520background%2C%2520academic%2520portrait%2C%2520confident%2520expression%2C%2520high%2520quality%2520professional%2520headshot%2C%2520clean%2520lighting&width=400&height=400&seq=1003&orientation=squarish" alt="Елена Сергеевна" class="w-full h-64 object-cover object-top">
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-800">Елена Сергеевна</h3>
+<p class="text-primary font-medium">Доктор юридических наук</p>
+<p class="text-gray-600 mt-3">Специализация: гражданское право, трудовое право, международное право</p>
+<p class="text-gray-600 mt-2">Опыт работы: 15 лет</p>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+<img src="https://readdy.ai/api/search-image?query=Professional%2520young%2520man%2520in%2520his%252030s%2520in%2520smart%2520casual%2520attire%2520against%2520neutral%2520background%2C%2520academic%2520portrait%2C%2520friendly%2520expression%2C%2520high%2520quality%2520professional%2520headshot%2C%2520clean%2520lighting&width=400&height=400&seq=1004&orientation=squarish" alt="Дмитрий Александрович" class="w-full h-64 object-cover object-top">
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-800">Дмитрий Александрович</h3>
+<p class="text-primary font-medium">Кандидат технических наук</p>
+<p class="text-gray-600 mt-3">Специализация: информационные технологии, программирование, базы данных</p>
+<p class="text-gray-600 mt-2">Опыт работы: 9 лет</p>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<button class="bg-primary text-white px-6 py-3 rounded-button hover:bg-primary/90 transition whitespace-nowrap">Познакомиться со всей командой</button>
+</div>
+</div>
+</section>
+<!-- Процесс работы -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">Как мы работаем</h2>
+<p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Наш процесс работы над дипломными проектами прозрачен и эффективен</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white p-6 rounded-lg shadow-sm relative">
+<div class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</div>
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-chat-1-line ri-lg"></i>
+</div>
+</div>
+<h3 class="text-lg font-bold text-gray-800 text-center mb-3">Обсуждение требований</h3>
+<p class="text-gray-600 text-center">Мы детально обсуждаем все требования к работе, сроки и особенности выполнения.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm relative">
+<div class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">2</div>
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-user-search-line ri-lg"></i>
+</div>
+</div>
+<h3 class="text-lg font-bold text-gray-800 text-center mb-3">Подбор специалиста</h3>
+<p class="text-gray-600 text-center">Мы подбираем эксперта, специализирующегося именно в вашей области исследования.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm relative">
+<div class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">3</div>
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-draft-line ri-lg"></i>
+</div>
+</div>
+<h3 class="text-lg font-bold text-gray-800 text-center mb-3">Написание работы</h3>
+<p class="text-gray-600 text-center">Автор приступает к написанию работы, регулярно отчитываясь о ходе выполнения.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm relative">
+<div class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">4</div>
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-check-double-line ri-lg"></i>
+</div>
+</div>
+<h3 class="text-lg font-bold text-gray-800 text-center mb-3">Проверка и доработка</h3>
+<p class="text-gray-600 text-center">Готовая работа проходит проверку на плагиат и при необходимости дорабатывается.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Отзывы клиентов -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">Отзывы наших клиентов</h2>
+<p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Узнайте, что говорят о нас студенты, которые уже успешно защитили свои дипломные работы</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-gray-50 p-8 rounded-lg">
+<div class="flex items-center mb-4">
+<div class="text-yellow-400 flex">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600 mb-6">«Очень благодарна за помощь с дипломной работой! Все было выполнено на высшем уровне, с учетом всех моих пожеланий. Защитилась на отлично!»</p>
+<div class="flex items-center">
+<div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+<div class="w-12 h-12 flex items-center justify-center text-gray-600">
+<i class="ri-user-line"></i>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">Анастасия Викторовна</h4>
+<p class="text-gray-500 text-sm">Финансовый университет</p>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg">
+<div class="flex items-center mb-4">
+<div class="text-yellow-400 flex">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600 mb-6">«Сотрудничество превзошло все мои ожидания. Работа была выполнена раньше срока, а автор всегда был на связи и учитывал все мои комментарии. Рекомендую!»</p>
+<div class="flex items-center">
+<div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+<div class="w-12 h-12 flex items-center justify-center text-gray-600">
+<i class="ri-user-line"></i>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">Максим Игоревич</h4>
+<p class="text-gray-500 text-sm">МГТУ им. Баумана</p>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg">
+<div class="flex items-center mb-4">
+<div class="text-yellow-400 flex">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-star-half-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600 mb-6">«Обратился за помощью в написании дипломной работы по юриспруденции. Результат превзошел ожидания — работа получила высокую оценку на защите. Спасибо за профессионализм!»</p>
+<div class="flex items-center">
+<div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+<div class="w-12 h-12 flex items-center justify-center text-gray-600">
+<i class="ri-user-line"></i>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">Артем Николаевич</h4>
+<p class="text-gray-500 text-sm">МГУ им. Ломоносова</p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<button class="bg-primary text-white px-6 py-3 rounded-button hover:bg-primary/90 transition whitespace-nowrap">Смотреть все отзывы</button>
+</div>
+</div>
+</section>
+<!-- Миссия и ценности -->
+<section class="py-16 bg-primary text-white">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 mb-10 md:mb-0">
+<h2 class="text-3xl font-bold mb-6">Наша миссия и ценности</h2>
+<p class="text-lg mb-6">Мы стремимся помогать студентам в достижении их академических целей, предоставляя качественные услуги по написанию дипломных работ.</p>
+<div class="space-y-4 mt-8">
+<div class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center mt-1 mr-4">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2">Качество</h3>
+<p>Мы гарантируем высокое качество каждой выполненной работы, соответствующее академическим стандартам.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center mt-1 mr-4">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2">Конфиденциальность</h3>
+<p>Мы обеспечиваем полную конфиденциальность всех данных наших клиентов и деталей заказов.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center mt-1 mr-4">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2">Индивидуальный подход</h3>
+<p>Мы учитываем все требования и пожелания каждого клиента, обеспечивая персонализированный подход.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 md:pl-12">
+<img src="https://readdy.ai/api/search-image?query=A%2520modern%2520university%2520campus%2520with%2520students%2520walking%2520between%2520buildings%2C%2520academic%2520atmosphere%2C%2520clean%2520architecture%2C%2520bright%2520day%2C%2520professional%2520educational%2520environment&width=600&height=500&seq=1005&orientation=landscape" alt="Университетский кампус" class="rounded-lg shadow-lg w-full">
+</div>
+</div>
+</div>
+</section>
+<!-- Призыв к действию -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="bg-gray-50 rounded-lg p-8 md:p-12 text-center max-w-4xl mx-auto">
+<h2 class="text-3xl font-bold text-gray-800 mb-6">Готовы заказать дипломную работу?</h2>
+<p class="text-lg text-gray-600 mb-8">Свяжитесь с нами сегодня, и мы поможем вам успешно завершить ваше обучение!</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="https://readdy.ai/home/2e0d8074-547f-423d-8b38-7739c09d09e5/d835270f-7625-42a6-bb53-590e2ee2dff9" data-readdy="true" class="bg-primary text-white px-8 py-3 rounded-button hover:bg-primary/90 transition whitespace-nowrap">Связаться с нами</a>
+<button class="bg-white border border-primary text-primary px-8 py-3 rounded-button hover:bg-gray-50 transition whitespace-nowrap">Узнать стоимость</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Подвал сайта -->
+<footer class="bg-gray-100 py-12 border-t border-gray-200">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<h3 class="text-lg font-bold text-gray-800 mb-4">Диплом</h3>
+<p class="text-gray-600">141960, Москва,<br>Талдом, рп. Запрудня</p>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-800 mb-4">Время</h3>
+<p class="text-gray-600">Понедельник — Пятница<br>с 8:00 до 22:00</p>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-800 mb-4">Контакт</h3>
+<p class="text-gray-600">
+<a href="mailto:crybabyfoxx@gmail.com" class="hover:text-primary">crybabyfoxx@gmail.com</a><br>
+<a href="tel:+79017567564" class="hover:text-primary">(901) 756-6764</a>
+</p>
+</div>
+</div>
+<div class="mt-12 text-center text-gray-500 text-sm">
+<p>Designed by xTet</p>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Инициализация графика удовлетворенности клиентов
+var chartDom = document.getElementById('satisfaction-chart');
+var myChart = echarts.init(chartDom);
+var option = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Удовлетворенность клиентов', 'Количество заказов'],
+textStyle: {
+color: '#ffffff'
+}
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '3%',
+top: '15%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+boundaryGap: false,
+data: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+axisLine: {
+lineStyle: {
+color: 'rgba(255, 255, 255, 0.3)'
+}
+},
+axisLabel: {
+color: '#ffffff'
+}
+},
+yAxis: [
+{
+type: 'value',
+name: 'Удовлетворенность (%)',
+min: 80,
+max: 100,
+axisLine: {
+lineStyle: {
+color: 'rgba(255, 255, 255, 0.3)'
+}
+},
+axisLabel: {
+color: '#ffffff',
+formatter: '{value}%'
+},
+splitLine: {
+lineStyle: {
+color: 'rgba(255, 255, 255, 0.1)'
+}
+}
+},
+{
+type: 'value',
+name: 'Заказы',
+axisLine: {
+lineStyle: {
+color: 'rgba(255, 255, 255, 0.3)'
+}
+},
+axisLabel: {
+color: '#ffffff'
+},
+splitLine: {
+lineStyle: {
+color: 'rgba(255, 255, 255, 0.1)'
+}
+}
+}
+],
+series: [
+{
+name: 'Удовлетворенность клиентов',
+type: 'line',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(87, 181, 231, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [
+{
+offset: 0,
+color: 'rgba(87, 181, 231, 0.2)'
+},
+{
+offset: 1,
+color: 'rgba(87, 181, 231, 0.05)'
+}
+]
+}
+},
+data: [88, 90, 92, 94, 95, 97, 98]
+},
+{
+name: 'Количество заказов',
+type: 'bar',
+yAxisIndex: 1,
+itemStyle: {
+color: 'rgba(251, 191, 114, 1)',
+borderRadius: 0
+},
+data: [320, 420, 560, 780, 950, 1200, 1450]
+}
+]
+};
+myChart.setOption(option);
+// Обработка изменения размера окна
+window.addEventListener('resize', function() {
+myChart.resize();
+});
+});
+</script>
+</body>
+</html>

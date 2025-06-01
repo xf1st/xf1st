@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в систему - Академический сервис</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#00236a', secondary: '#002f8f' }, borderRadius: { 'none': '0px', 'sm': '0px', DEFAULT: '0px', 'md': '0px', 'lg': '0px', 'xl': '0px', '2xl': '0px', '3xl': '0px', 'full': '0px', 'button': '0px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: #f9f7f4;
+        }
+
+        .form-input:focus {
+            border-color: #002f8f;
+            box-shadow: 0 0 0 1px #002f8f;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .custom-checkbox {
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark {
+            height: 18px;
+            width: 18px;
+            background-color: #fff;
+            border: 1px solid #d1d5db;
+            display: inline-block;
+            position: relative;
+        }
+
+        .custom-checkbox input:checked~.checkmark {
+            background-color: #002f8f;
+            border-color: #002f8f;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .custom-checkbox input:checked~.checkmark:after {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Шапка сайта -->
+    <header class="bg-primary text-white">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 flex items-center justify-center mr-2">
+                    <i class="ri-book-open-line ri-2x"></i>
+                </div>
+                <span class="font-['Pacifico'] text-2xl">logo</span>
+            </div>
+            <a href="https://readdy.ai/home/00ee976a-50fc-455a-b894-665422534c3b/651b61cf-42c9-4e7f-8f8d-42ff810f242b"
+                data-readdy="true" class="flex items-center text-white hover:text-gray-200">
+                <div class="w-5 h-5 flex items-center justify-center mr-1">
+                    <i class="ri-arrow-left-line"></i>
+                </div>
+                <span>Вернуться на главную</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="min-h-screen flex items-center justify-center py-12 px-4">
+        <div class="w-full max-w-md bg-white shadow-lg p-8 md:p-10">
+            <div class="text-center mb-8">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-900">Вход в систему</h1>
+                <p class="text-gray-600 mt-2">Введите данные для входа в личный кабинет</p>
+            </div>
+
+            <form class="space-y-6">
+                <!-- Email поле -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                        </div>
+                        <input type="email" id="email" name="email"
+                            class="form-input w-full pl-10 py-3 border border-gray-300 focus:outline-none"
+                            placeholder="Введите ваш email">
+                    </div>
+                </div>
+
+                <!-- Пароль поле -->
+                <div>
+                    <div class="flex items-center justify-between mb-1">
+                        <label for="password" class="block text-sm font-medium text-gray-700">Пароль</label>
+                        <a href="#" class="text-sm text-primary hover:underline">Забыли пароль?</a>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400">
+                                <i class="ri-lock-line"></i>
+                            </div>
+                        </div>
+                        <input type="password" id="password" name="password"
+                            class="form-input w-full pl-10 py-3 border border-gray-300 focus:outline-none"
+                            placeholder="Введите ваш пароль">
+                        <div class="password-toggle w-5 h-5 flex items-center justify-center text-gray-400">
+                            <i class="ri-eye-line" id="togglePassword"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Запомнить меня -->
+                <div class="flex items-center">
+                    <label class="custom-checkbox flex items-center">
+                        <input type="checkbox" id="remember" name="remember">
+                        <span class="checkmark mr-2"></span>
+                        <span class="text-sm text-gray-700">Запомнить меня</span>
+                    </label>
+                </div>
+
+                <!-- Кнопка входа -->
+                <button type="submit"
+                    class="w-full bg-primary text-white py-3 rounded-button font-medium hover:bg-primary/90 transition whitespace-nowrap">Войти</button>
+            </form>
+
+            <!-- Регистрация -->
+            <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+                <p class="text-gray-600">Нет аккаунта? <a href="#"
+                        class="text-primary font-medium hover:underline">Зарегистрироваться</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="bg-primary text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2025 Академия Знаний. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordField = document.getElementById('password');
+
+            togglePassword.addEventListener('click', function () {
+                const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordField.setAttribute('type', type);
+
+                if (type === 'text') {
+                    togglePassword.classList.remove('ri-eye-line');
+                    togglePassword.classList.add('ri-eye-off-line');
+                } else {
+                    togglePassword.classList.remove('ri-eye-off-line');
+                    togglePassword.classList.add('ri-eye-line');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контактная информация - Академический сервис</title>
+    <link rel="shortcut icon" href="assets/logo/logo.png" type="image/x-icon">
+    <link rel="icon" href="assets/logo/logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#00236a', secondary: '#002f8f' }, borderRadius: { 'none': '0px', 'sm': '0px', DEFAULT: '0px', 'md': '0px', 'lg': '0px', 'xl': '0px', '2xl': '0px', '3xl': '0px', 'full': '0px', 'button': '0px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        :where([class^="ri-"])::before {
+            content: "\f3c2"; /* Default icon */
+        }
+        body {
+            font-family: 'Rubik', sans-serif;
+        }
+        .toastify {
+            background: linear-gradient(to right, #00236a, #002f8f);
+            border-radius: 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding-right: 40px;
+            cursor: pointer;
+        }
+        .toastify.on {
+            background: linear-gradient(to right, #00236a, #002f8f);
+        }
+        .toast-close {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            opacity: 0.7;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .toast-close:hover {
+            opacity: 1;
+        }
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        #mobile-menu:not(.hidden) {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f9f7f4]">
+    <header class="bg-primary text-white relative">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center" data-aos="fade-right">
+                <div class="w-10 h-10 flex items-center justify-center mr-2">
+                </div>
+                <a href="index.html"><span class="text-2xl font-bold">xf1st</span></a>
+            </div>
+            <nav class="hidden md:flex space-x-6" data-aos="fade-down" data-aos-delay="100">
+                <a href="index.html" class="hover:text-gray-300 relative group">Главная страница
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </a>
+                <a href="index.html#services" class="hover:text-gray-300 relative group">Услуги
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </a>
+                <a href="about.html" class="hover:text-gray-300 relative group">О нас
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </a>
+                <a href="contact.html" class="hover:text-gray-300 relative group">Контакты
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </a>
+            </nav>
+            <div class="flex items-center" data-aos="fade-left" data-aos-delay="200">
+                <a href="auth.html"
+                    class="px-4 py-2 text-primary bg-white rounded-button whitespace-nowrap hover:bg-gray-100 transition hidden md:block">FAQ</a>
+                <button id="mobile-menu-button" aria-label="Открыть меню" class="md:hidden text-white focus:outline-none ml-4">
+                    <i class="ri-menu-line ri-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 w-full bg-primary/95 backdrop-blur-sm z-50 shadow-lg">
+            <nav class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-white hover:bg-white/10 p-2 rounded-md">Главная страница</a>
+                <a href="index.html#services" class="text-white hover:bg-white/10 p-2 rounded-md">Услуги</a>
+                <a href="about.html" class="text-white hover:bg-white/10 p-2 rounded-md">О нас</a>
+                <a href="contact.html" class="text-white bg-white/10 p-2 rounded-md font-medium">Контакты</a>
+                <a href="auth.html" class="text-white hover:bg-white/10 p-2 rounded-md">FAQ</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="bg-primary text-white py-20">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2" data-aos="fade-right">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-6">Контактная информация</h1>
+                        <p class="text-lg font-light mb-8">Для связи с нами используйте указанный адрес и телефон. Мы также предоставляем форму для обратной связи.</p>
+                    </div>
+                    <div class="md:w-1/2" data-aos="fade-left" data-aos-delay="200">
+                        <img src="https://readdy.ai/api/search-image?query=A%20young%20female%20student%20studying%20at%20a%20desk%20with%20books%20and%20laptop%2C%20bright%20modern%20interior%20with%20natural%20light%20coming%20through%20windows%2C%20clean%20workspace%20environment%2C%20professional%20academic%20setting&width=600&height=500&seq=123&orientation=landscape"
+                            alt="Студент за учебой" class="rounded-lg shadow-xl object-cover object-top w-full h-auto max-h-[400px]">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-[#f9f7f4] py-20 border-t border-gray-200">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-6 text-primary" data-aos="fade-up">Напишите нам прямо сейчас</h2>
+                    <p class="text-lg font-light text-gray-700 mb-4" data-aos="fade-up" data-aos-delay="100">Мы готовы помочь вам с вашей дипломной работой. Свяжитесь с нами любым удобным способом, и мы обсудим все детали.</p>
+                    <p class="text-sm font-light text-gray-500 mb-12" data-aos="fade-up" data-aos-delay="100">Примечание: После согласования стоимости необходимо внести предоплату в размере 50% от общей суммы заказа.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 max-w-3xl mx-auto">
+                        <a href="https://wa.me/79017566764" target="_blank" rel="noopener noreferrer"
+                            class="flex items-center justify-center p-5 bg-white rounded-md shadow-md hover:shadow-lg hover:bg-gray-50 transition group transform hover:scale-105"
+                            data-aos="fade-up" data-aos-delay="200">
+                            <i class="ri-whatsapp-fill ri-xl text-[#25D366] mr-3"></i>
+                            <span class="font-medium text-base text-primary">WhatsApp</span>
+                        </a>
+                        <a href="https://t.me/maybeskyy" target="_blank" rel="noopener noreferrer"
+                            class="flex items-center justify-center p-5 bg-white rounded-md shadow-md hover:shadow-lg hover:bg-gray-50 transition group transform hover:scale-105"
+                             data-aos="fade-up" data-aos-delay="300">
+                            <i class="ri-telegram-fill ri-xl text-[#0088cc] mr-3"></i>
+                            <span class="font-medium text-base text-primary">Telegram</span>
+                        </a>
+                        <a href="https://vk.com/maybeprincess" target="_blank" rel="noopener noreferrer"
+                            class="flex items-center justify-center p-5 bg-white rounded-md shadow-md hover:shadow-lg hover:bg-gray-50 transition group transform hover:scale-105"
+                             data-aos="fade-up" data-aos-delay="400">
+                            <i class="ri-vk-fill ri-xl text-[#45668e] mr-3"></i>
+                            <span class="font-medium text-base text-primary">ВК</span>
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 max-w-xl mx-auto border border-gray-200" data-aos="fade-up" data-aos-delay="500">
+                        <p class="text-lg font-light text-primary mb-4">Скопируйте пример текста для заявки на диплом:</p>
+                        <div class="relative">
+                            <label for="copyText" class="sr-only">Пример текста заявки</label>
+                            <textarea id="copyText" readonly aria-label="Пример текста заявки"
+                                class="w-full bg-gray-50 border border-gray-300 rounded-md px-4 py-3 text-left font-sans text-gray-700 text-sm resize-none h-48" 
+                                >Здравствуйте! Хочу заказать дипломную работу.
+Тема: [Ваша тема]
+Имя Фамилия: [Ваше имя и фамилия]
+Место прохождния практики: [Название предприятия]
+Срок сдачи: [Желаемая дата]
+Объем: [Примерный объем]
+Желаемая оценка: [3, 4, 5]
+Дополнительные требования: [Опишите требования]
+</textarea>
+                            <button onclick="copyToClipboard()" aria-label="Скопировать текст заявки"
+                                class="absolute right-3 top-3 bg-gray-200 p-2 rounded-md hover:bg-gray-300 transition">
+                                <i class="ri-file-copy-line ri-lg text-gray-600"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact-form" class="py-24 bg-[#f9f7f4]">
+            <div class="container mx-auto px-4">
+                 <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <div data-aos="fade-right">
+                        <h2 class="text-3xl font-bold text-[#0046d1] mb-8">Связаться</h2>
+                        <div class="space-y-3 text-sm">
+                            <p class="text-[#003297] font-light flex items-center">
+                                <i class="ri-phone-line mr-3"></i> 
+                                <a href="tel:+122" class="contact-link">хз</a>
+                            </p>
+                            <p class="text-[#003297] font-light flex items-center">
+                                <i class="ri-mail-line mr-3"></i> 
+                                <a href="mailto:xf1stads@gmail.com" class="contact-link">xf1stads@gmail.com</a>
+                            </p>
+                            <p class="text-[#003297] font-light flex items-center">
+                                <i class="ri-map-pin-line mr-3"></i> 
+                                <a href="https://www.google.com/maps/place/140960,+Москва" target="_blank" rel="noopener" class="contact-link">140960, Москва</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" data-aos-delay="100">
+                        <form class="space-y-5" action="https://docs.google.com/forms/d/e/1FAIpQLSeyRveJiSkIVaFoV_HIl_cOS4It2Db97A_y5MR5isvm0CIP3Q/formResponse" method="POST" >
+                            <div data-aos="fade-up" data-aos-delay="200">
+                                <label for="name" class="block text-xs font-medium text-gray-600 mb-1">Имя</label>
+                                <input type="text" id="name" name="entry.2103735898"
+                                    class="w-full px-4 py-2 border border-primary/30 rounded-md focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 text-sm"
+                                    placeholder="" aria-label="Введите ваше имя">
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="300">
+                                <label for="email" class="block text-xs font-medium text-gray-600 mb-1">E-mail <span class="text-gray-400">(обязательно)</span></label>
+                                <input type="email" id="email" name="entry.2016228396"
+                                    class="w-full px-4 py-2 border border-primary/30 rounded-md focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 text-sm"
+                                    placeholder="" aria-label="Введите ваш email">
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="400">
+                                <label for="message" class="block text-xs font-medium text-gray-600 mb-1">Сообщение</label>
+                                <textarea id="message" name="entry.954100367" rows="5"
+                                    class="w-full px-4 py-2 border border-primary/30 rounded-md resize-none focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 text-sm"
+                                    placeholder="" aria-label="Введите ваше сообщение"></textarea>
+                            </div>
+                            <div data-aos="fade-up" data-aos-delay="500">
+                                <button type="submit"
+                                    class="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary/90 transition whitespace-nowrap text-sm">Отправить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Контакты</h3>
+                    <div class="space-y-2">
+                        <p class="flex items-center">
+                            <i class="ri-map-pin-line mr-2"></i>
+                            <a href="https://maps.google.com/?q=140960, Москва" 
+                               class="link-hover hover:text-gray-300 transition-colors duration-300">
+                                140960, Москва
+                            </a>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="ri-mail-line mr-2"></i>
+                            <a href="mailto:xf1stads@gmail.com" 
+                               class="link-hover hover:text-gray-300 transition-colors duration-300">
+                                xf1stads@gmail.com
+                            </a>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="ri-phone-line mr-2"></i>
+                            <a href="tel:+79009009090" 
+                               class="phone-mask link-hover hover:text-gray-300 transition-colors duration-300">
+                                (900) 900-90-90
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Навигация</h3>
+                    <nav class="space-y-2">
+                        <a href="index.html" class="block link-hover hover:text-gray-300 transition-colors duration-300">Главная страница</a>
+                        <a href="index.html#services" class="block link-hover hover:text-gray-300 transition-colors duration-300">Услуги</a>
+                        <a href="about.html" class="block link-hover hover:text-gray-300 transition-colors duration-300">О нас</a>
+                        <a href="contact.html" class="block link-hover hover:text-gray-300 transition-colors duration-300">Контакты</a>
+                    </nav>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Социальные сети</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/79017566764" class="link-hover hover:text-gray-300 transition-colors duration-300">
+                            <i class="ri-whatsapp-line ri-xl"></i>
+                        </a>
+                        <a href="https://t.me/maybeskyy" class="link-hover hover:text-gray-300 transition-colors duration-300">
+                            <i class="ri-telegram-line ri-xl"></i>
+                        </a>
+                        <a href="https://vk.com/maybeprincess" class="link-hover hover:text-gray-300 transition-colors duration-300">
+                            <i class="ri-vk-line ri-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/10 text-center">
+                <p>&copy; 2025 xf1st. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true
+      });
+
+      function showToast(message, type = 'success') {
+          const toast = Toastify({
+              text: message,
+              duration: 5000,
+              gravity: "top",
+              position: "right",
+              style: {
+                  background: "linear-gradient(to right, #00236a, #002f8f)",
+                  borderRadius: "0",
+                  boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+              },
+              onClick: function() {
+                  toast.hideToast();
+              }
+          });
+
+          // Добавляем кнопку закрытия
+          const closeButton = document.createElement('span');
+          closeButton.className = 'toast-close';
+          closeButton.innerHTML = '<i class="ri-close-line"></i>';
+          closeButton.onclick = function(e) {
+              e.stopPropagation();
+              toast.hideToast();
+          };
+
+          // Показываем уведомление и добавляем кнопку закрытия
+          toast.showToast();
+          const toastElement = document.querySelector('.toastify:last-child');
+          if (toastElement) {
+              toastElement.appendChild(closeButton);
+          }
+      }
+
+      function copyToClipboard() {
+          const copyText = document.getElementById("copyText");
+          copyText.select();
+          copyText.setSelectionRange(0, 99999);
+          navigator.clipboard.writeText(copyText.value);
+          showToast("Текст успешно скопирован!");
+      }
+
+      // Добавляем обработчики для форм
+      document.addEventListener('DOMContentLoaded', function() {
+          const forms = document.querySelectorAll('form');
+          forms.forEach(form => {
+              form.addEventListener('submit', function(e) {
+                  e.preventDefault();
+                  showToast("Ваше сообщение отправлено! Мы свяжемся с вами в ближайшее время.");
+                  // Здесь можно добавить реальную отправку формы
+                  setTimeout(() => form.submit(), 2000);
+              });
+          });
+
+          // Добавляем обработчики для социальных кнопок
+          const socialButtons = document.querySelectorAll('a[target="_blank"]');
+          socialButtons.forEach(button => {
+              button.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  const href = this.getAttribute('href');
+                  showToast("Открываем ссылку в новом окне...");
+                  setTimeout(() => window.open(href, '_blank'), 500);
+              });
+          });
+      });
+
+      document.addEventListener('DOMContentLoaded', function () {
+          const menuButton = document.getElementById('mobile-menu-button');
+          const mobileMenu = document.getElementById('mobile-menu');
+          const menuIcon = menuButton ? menuButton.querySelector('i') : null;
+
+          if (menuButton && mobileMenu && menuIcon) {
+              menuButton.addEventListener('click', () => {
+                  const isHidden = mobileMenu.classList.toggle('hidden');
+                  
+                  if (!isHidden) {
+                      menuIcon.classList.remove('ri-menu-line');
+                      menuIcon.classList.add('ri-close-line');
+                  } else {
+                      menuIcon.classList.remove('ri-close-line');
+                      menuIcon.classList.add('ri-menu-line');
+                  }
+              });
+
+              const mobileLinks = mobileMenu.querySelectorAll('a');
+              mobileLinks.forEach(link => {
+                  link.addEventListener('click', () => {
+                      mobileMenu.classList.add('hidden'); 
+                      menuIcon.classList.remove('ri-close-line');
+                      menuIcon.classList.add('ri-menu-line');
+                  });
+              });
+          }
+      });
+    </script>
+</body>
+
+</html>
