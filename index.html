@@ -1,644 +1,472 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="dark scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Профессиональный сервис по написанию академических работ. Дипломные, курсовые работы, научные статьи. Гарантия качества и уникальности.">
-    <meta name="keywords" content="дипломная работа, курсовая работа, научная статья, академические работы, написание диплома, помощь студентам">
+    <meta name="description" content="xf1st — Full-Stack Developer & AI Integration Engineer. Создатель TravelLM и Sipliy Folder VPS. Next.js, Supabase, Node.js, LLM API.">
     <meta name="author" content="xf1st">
-    <title>Академический сервис - Профессиональная помощь студентам</title>
-    <link rel="shortcut icon" href="assets/logo/logo.png" type="image/x-icon">
-    <link rel="icon" href="assets/logo/logo.png" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { primary: '#00236a', secondary: '#002f8f' }, borderRadius: { 'none': '0px', 'sm': '0px', DEFAULT: '0px', 'md': '0px', 'lg': '0px', 'xl': '0px', '2xl': '0px', '3xl': '0px', 'full': '0px', 'button': '0px' } } } }</script>
+    <title>xf1st — Full-Stack & AI Integration Engineer</title>
+    
+    <!-- Google Fonts: Rubik & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Remixicon Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Rubik', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        appleBlack: '#000000',
+                        appleDark: '#0a0a0c',
+                        appleCard: '#121215',
+                        appleBorder: 'rgba(255, 255, 255, 0.1)',
+                        appleSubtext: '#86868b',
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        :where([class^="ri-"])::before {
-            content: "\f3c2";
-        }
-
         body {
-            font-family: 'Rubik', sans-serif;
-        }
-        .toastify {
-            background: linear-gradient(to right, #00236a, #002f8f);
-            border-radius: 0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            padding-right: 40px;
-            cursor: pointer;
-        }
-        .toastify.on {
-            background: linear-gradient(to right, #00236a, #002f8f);
-        }
-        .toast-close {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            opacity: 0.7;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-        .toast-close:hover {
-            opacity: 1;
-        }
-        .contact-link {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .contact-link:hover {
-            color: #002f8f;
+            font-family: 'Rubik', -apple-system, sans-serif;
+            background-color: #000000;
+            color: #f5f5f7;
+            overflow-x: hidden;
         }
 
-        /* Анимации при наведении */
-        .btn-hover {
-            transition: all 0.3s ease;
-        }
-        .btn-hover:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .link-hover {
-            transition: all 0.2s ease;
-        }
-        .link-hover:hover {
-            color: #4F46E5;
-            transform: translateX(2px);
+        /* Apple Glass Header */
+        .apple-header {
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Параллакс эффект */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        /* Apple Brutal Bento Card */
+        .apple-bento {
+            background: rgba(18, 18, 21, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Маска для телефона */
-        .phone-mask {
-            font-family: monospace;
+        .apple-bento:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.9);
+        }
+
+        /* Pure Silver Headline Gradient */
+        .apple-silver-text {
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222226;
+            border-radius: 3px;
         }
     </style>
 </head>
 
-<body class="bg-[#f9f7f4]">
-    <!-- Шапка сайта -->
-    <header class="bg-primary text-white relative">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center" data-aos="fade-right">
-                <div class="w-10 h-10 flex items-center justify-center mr-2">
-                    <i></i>
-                </div>
-                <a href=""><span class="text-2xl font-bold">xf1st</span></a>
-            </div>
-            <nav class="hidden md:flex space-x-6" data-aos="fade-down" data-aos-delay="100">
-                <a href="#" class="hover:text-gray-300 relative group">Главная страница
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                </a>
-                <a href="#services" class="hover:text-gray-300 relative group">Услуги
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                </a>
-                <a href="about.html" class="hover:text-gray-300 relative group">О нас
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                </a>
-                <a href="contact.html" class="hover:text-gray-300 relative group">Контакты
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-                </a>
+<body class="relative min-h-screen antialiased selection:bg-white selection:text-black">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 apple-header">
+        <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+            <!-- Brand -->
+            <a href="#" class="flex items-center space-x-2 text-white font-medium tracking-tight">
+                <span class="w-6 h-6 rounded-full bg-white text-black font-extrabold flex items-center justify-center text-xs">x</span>
+                <span class="font-bold text-base tracking-wide">xf1st</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden sm:flex items-center space-x-8 text-xs font-medium text-[#86868b]">
+                <a href="#hero" class="hover:text-white transition-colors">Обзор</a>
+                <a href="#travellm" class="hover:text-white transition-colors">TravelLM</a>
+                <a href="#siplyi" class="hover:text-white transition-colors">Sipliy Folder VPS</a>
+                <a href="#skills" class="hover:text-white transition-colors">Навыки</a>
+                <a href="#contact" class="hover:text-white transition-colors">Связь</a>
             </nav>
-            <div class="flex items-center" data-aos="fade-left" data-aos-delay="200">
-                <a href="auth.html"
-                    data-readdy="true"
-                    class="px-4 py-2 text-primary bg-white rounded-button whitespace-nowrap hover:bg-gray-100 transition hidden md:block">FAQ</a>
-                <button id="mobile-menu-button" aria-label="Открыть меню" class="md:hidden text-white focus:outline-none ml-4">
-                    <i class="ri-menu-line ri-xl"></i>
-                </button>
+
+            <!-- Telegram Button -->
+            <div>
+                <a href="https://t.me/xf1st" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-medium border border-white/15 transition-all">
+                    <i class="ri-telegram-fill text-sky-400"></i>
+                    <span>Telegram</span>
+                </a>
             </div>
-        </div>
-        <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 w-full bg-primary/95 backdrop-blur-sm z-50 shadow-lg">
-            <nav class="flex flex-col p-4 space-y-3">
-                <a href="#" class="text-white hover:bg-white/10 p-2 rounded-md">Главная страница</a>
-                <a href="#services" class="text-white hover:bg-white/10 p-2 rounded-md">Услуги</a>
-                <a href="about.html" class="text-white hover:bg-white/10 p-2 rounded-md">О нас</a>
-                <a href="contact.html" class="text-white hover:bg-white/10 p-2 rounded-md">Контакты</a>
-                <a href="auth.html" class="text-white hover:bg-white/10 p-2 rounded-md">FAQ</a>
-            </nav>
         </div>
     </header>
-    <!-- Главный баннер -->
-    <section class="bg-[#00236a] min-h-screen py-16">
-        <div class="container mx-auto px-4">
-            <!-- Верхняя часть: заголовок -->
-            <div class="mb-8" data-aos="fade-up">
-                <h1 class="text-white text-4xl md:text-5xl font-bold leading-tight mb-4">
-                    Ваш надежный сервис<br>для академических работ
-                </h1>
-            </div>
-    
-            <!-- Изображение -->
-            <div class="mb-8" data-aos="zoom-in" data-aos-delay="200">
-                <img src="assets/photos/books-bookstore.jpeg" alt="Academic Books"
-                    class="w-full h-auto rounded-lg shadow-xl mx-auto">
-            </div>
-    
-            <!-- Нижняя часть: описание + кнопка -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start text-white">
-                <!-- Левая колонка: подзаголовок -->
-                <div data-aos="fade-right" data-aos-delay="400">
-                    <p class="text-xl md:text-2xl font-bold">Закажите работу легко</p>
-                </div>
-                
-    
-                <!-- Правая колонка: описание и кнопка -->
-                <div class="pl-6 md:pl-12" data-aos="fade-left" data-aos-delay="500">
-                    <p class="text-base md:text-lg font-light mb-6">
-                        Наша платформа предоставляет возможность заказа академических работ с функциями
-                        для удобного управления процессом, включая личные кабинеты, статусы заявок и
-                        возможность общения с исполнителями.
-                    </p>
-                    <a href="contact.html"
-                        class="inline-block bg-white text-[#00236a] px-6 py-4 font-medium hover:bg-gray-100 transition rounded-button">
-                        Наши услуги
-                    </a>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-    <!-- О нашем сервисе -->
-    <section id="about" class="py-16 bg-[#f9f7f4]">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2" data-aos="fade-right">
-                    <img src="assets/photos/pexels.jpeg"
-                        alt="Студент за работой" class="shadow-lg object-cover w-full h-full object-top">
-                </div>
-                <div class="md:w-1/2" data-aos="fade-left" data-aos-delay="200">
-                    <h2 class="text-3xl font-bold text-[#003297] mb-6">О нашем сервисе</h2>
-                    <p class="text-[#003297] mb-6">
-                        Наша команда профессиональных авторов специализируется на написании
-                        академических работ любой сложности. У нас есть опыт работы с различными дисциплинами и темами,
-                        что позволяет нам предоставлять качественные услуги для студентов всех специальностей.
-                    </p>
-                    <p class="text-[#003297] mb-8">
-                        Мы гарантируем уникальность каждой работы, соблюдение всех требований
-                        и сроков выполнения. Наша цель — помочь вам достичь академического успеха.
-                    </p>
-                    <button
-                        class="bg-[#003297] text-white px-6 py-3 rounded-button font-medium hover:bg-[#00267a] transition whitespace-nowrap">
-                        Узнать больше
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Услуги -->
-    <section id="services" class="py-16 bg-[#f9f7f4]">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-primary mb-12" data-aos="fade-up">Услуги</h2>
-            <div class="space-y-12">
-                <div class="flex flex-col md:flex-row gap-8 pb-8 border-b border-gray-200" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-2xl font-bold text-primary md:w-1/3">Написание курсовых работ</h3>
-                    <div class="md:w-2/3">
-                        <p class="text-gray-700 mb-4">Создание оригинальных курсовых работ по различным темам.</p>
-                        <a href="contact.html" class="text-primary font-medium hover:underline">Заказать курсовую</a>
-                    </div>
-                </div>
-                <div class="flex flex-col md:flex-row gap-8 pb-8 border-b border-gray-200" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-2xl font-bold text-primary md:w-1/3">Написание дипломных работ</h3>
-                    <div class="md:w-2/3">
-                        <p class="text-gray-700 mb-4">Помощь в написании дипломных работ с глубоким исследованием темы.
+    <main class="relative z-10 max-w-5xl mx-auto px-6 space-y-24 sm:space-y-32 py-16 sm:py-24">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="text-center max-w-3xl mx-auto space-y-8 pt-4">
+            
+            <!-- Availability Pill -->
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-xs font-medium text-[#86868b]">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span class="tracking-wide">Full-Stack & AI Integration Engineer</span>
+            </div>
+
+            <!-- Brutal Headline -->
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.08] apple-silver-text">
+                Full-Stack Developer.<br>AI Integration Engineer.
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-base sm:text-lg text-[#86868b] leading-relaxed max-w-2xl mx-auto font-normal">
+                Проектирование и разработка высоконагруженных веб-сервисов на <span class="text-white font-medium">Next.js</span>, <span class="text-white font-medium">Supabase</span> и <span class="text-white font-medium">Node.js</span> с интеграцией языковых моделей (<span class="text-white font-medium">Claude, OpenAI API</span>).
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-3">
+                <a href="#travellm" 
+                   class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white text-black font-bold text-sm hover:bg-slate-200 transition-all shadow-lg shadow-white/10">
+                    Посмотреть проекты
+                </a>
+
+                <a href="https://t.me/xf1st" target="_blank" rel="noopener noreferrer"
+                   class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white/[0.08] hover:bg-white/[0.15] text-white font-bold text-sm border border-white/15 transition-all flex items-center justify-center space-x-2">
+                    <i class="ri-telegram-fill text-sky-400 text-base"></i>
+                    <span>Написать в Telegram</span>
+                </a>
+            </div>
+
+            <!-- Tech Spec Bar -->
+            <div class="pt-8 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-xs font-mono text-[#86868b]">
+                <span>Next.js App Router</span>
+                <span class="text-white/20">•</span>
+                <span>Supabase PostgreSQL</span>
+                <span class="text-white/20">•</span>
+                <span>Prompt Caching & Streaming</span>
+                <span class="text-white/20">•</span>
+                <span>Docker</span>
+            </div>
+        </section>
+
+        <!-- CASE 1: TravelLM (.ru / .world) -->
+        <section id="travellm" class="space-y-8">
+            <div class="space-y-2">
+                <span class="text-xs font-mono text-white/50 uppercase tracking-widest font-semibold">Флагманский Проект</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">TravelLM (.ru / .world)</h2>
+                <p class="text-sm text-[#86868b]">Комплексная AI-платформа для генерации туристических маршрутов</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Left Column -->
+                <div class="lg:col-span-7 apple-bento rounded-3xl p-8 sm:p-10 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-emerald-400">
+                            Non-commercial Production Project
+                        </div>
+                        <h3 class="text-2xl font-bold text-white tracking-tight leading-snug">
+                            Генерация персонализированных маршрутов с помощью нейросетей
+                        </h3>
+                        <p class="text-sm text-[#86868b] leading-relaxed">
+                            Полный цикл разработки с нуля. Сервис позволяет генерировать кастомные туристические маршруты, имеет встроенную медиаленту впечатлений (Travel Reels), систему персональных AI-гидов и полноценную панель администратора для управления промптами и контентом.
                         </p>
-                        <a href="contact.html" class="text-primary font-medium hover:underline">Заказать дипломную</a>
                     </div>
-                </div>
-                <div class="flex flex-col md:flex-row gap-8" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="text-2xl font-bold text-primary md:w-1/3">Научные статьи</h3>
-                    <div class="md:w-2/3">
-                        <p class="text-gray-700 mb-4">Разработка научных статей для публикации в журналах.</p>
-                        <a href="contact.html" class="text-primary font-medium hover:underline">Заказать статью</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Цены -->
-    <section class="py-24 bg-[#f9f7f4]">
-        <div class="container mx-auto px-4">
-          <h2 class="text-4xl font-bold text-center text-[#0046d1] mb-16" data-aos="fade-up">
-            Цены на академические работы
-          </h2>
-      
-          <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <!-- Диплом -->
-            <div
-              class="bg-white p-8 rounded-[24px] shadow-lg transition-transform hover:scale-105 hover:shadow-2xl"
-              data-aos="fade-up"
-            >
-              <h3 class="text-2xl font-bold text-[#0046d1] mb-1">Диплом</h3>
-              <p class="text-lg font-normal text-[#0046d1] mb-6">20.000 ₽</p>
-              <ul class="space-y-3 text-[#003297] font-light">
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-[#0046d1] text-base mr-2 mt-1"></i>
-                  <span>Пояснительная записка + сайт</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-[#0046d1] text-base mr-2 mt-1"></i>
-                  <span>Редактирование</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-[#0046d1] text-base mr-2 mt-1"></i>
-                  <span>Уведомления о статусах заявок</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-[#0046d1] text-base mr-2 mt-1"></i>
-                  <span>Загрузка документов</span>
-                </li>
-              </ul>
-            </div>
-      
-            <!-- Курсовая -->
-            <div
-              class="bg-[#030637] p-8 rounded-[24px] text-white shadow-lg transition-transform hover:scale-105 hover:shadow-2xl"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <h3 class="text-2xl font-bold mb-1 text-[#E8E2FB]" >Курсовая работа</h3>
-              <p class="text-lg font-normal mb-6">5.000 ₽</p>
-              <ul class="space-y-3 text-white font-light">
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-white text-base mr-2 mt-1"></i>
-                  <span>Курсовая работа</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-white text-base mr-2 mt-1"></i>
-                  <span>Общение между клиентами и исполнителями</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-white text-base mr-2 mt-1"></i>
-                  <span>Уведомления о статусах заявок</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="ri-checkbox-circle-fill text-white text-base mr-2 mt-1"></i>
-                  <span>Загрузка документов</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-    </section>
-      
-    
-    <!-- Отзывы -->
-    <section class="py-16 bg-[#f9f7f4]" >
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-left text-[#00236a] mb-12" data-aos="fade-up">Обзоры</h2>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="bg-transparent p-0 shadow-none" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex text-[#0046d1] mb-3">
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                    </div>
-                    <p class="text-[#003297] font-normal text-base mb-3">Рейтинг: 4.5 из 5.</p>
-                    <p class="text-[#003297] font-light text-base mb-4">Отличный сервис для заказа академических работ! Все выполнено в срок и на высшем уровне.</p>
-                    <p class="font-medium text-[#003297] text-base mb-3">@rbmpq</p>
-                </div>
-                <div class="bg-transparent p-0 shadow-none" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex text-[#0046d1] mb-3">
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                    </div>
-                     <p class="text-[#003297] font-normal text-base mb-3">Рейтинг: 4.5 из 5.</p>
-                    <p class="text-[#003297] font-light text-base mb-4">Пользовался услугами этого сайта несколько раз, и каждый раз оставался доволен качеством работы.</p>
-                    <p class="font-medium text-[#003297] text-base mb-3">@zxccursed</p>
-                </div>
-                <div class="bg-transparent p-0 shadow-none" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex text-[#0046d1] mb-3">
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                    </div>
-                    <p class="text-[#003297] font-normal text-base mb-3">Рейтинг: 4.5 из 5.</p>
-                    <p class="text-[#003297] font-light text-base mb-4">Очень удобно общаться с исполнителями и отслеживать статус заказа в личном кабинете. Рекомендую!</p>
-                    <p class="font-medium text-[#003297] text-base mb-3">@babylowwer322</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Контактная форма -->
-    <section id="contact" class="py-24 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-[#0046d1] mb-8" data-aos="fade-up">Свяжитесь с нами</h2>
-            <div class="max-w-2xl mx-auto">
-                <p class="text-center text-gray-600 font-light text-base mb-10" data-aos="fade-up" data-aos-delay="100">Хотите начать? Отправьте запрос или закажите работу через контактную форму. Наша команда готова ответить на ваши вопросы.</p>
-                <form class="space-y-6" action="https://docs.google.com/forms/d/e/1FAIpQLSeyRveJiSkIVaFoV_HIl_cOS4It2Db97A_y5MR5isvm0CIP3Q/formResponse" method="POST" >
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div data-aos="fade-right" data-aos-delay="200">
-                            <input type="text" placeholder="Как вас зовут?" name="entry.2103735898"
-                                class="w-full px-4 py-3 border border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-500 focus:shadow-md hover:border-gray-700 rounded-md text-sm transition duration-300 ease-in-out">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/10 text-xs text-[#86868b]">
+                        <div class="space-y-1">
+                            <span class="text-white font-semibold block">🗺️ AI-Маршруты</span>
+                            <span>Учет бюджета, локации и интересов</span>
                         </div>
-                        <div data-aos="fade-left" data-aos-delay="300">
-                            <input type="email" placeholder="Ваш email?" name="entry.2016228396"
-                                class="w-full px-4 py-3 border border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-500 focus:shadow-md hover:border-gray-700 rounded-md text-sm transition duration-300 ease-in-out">
+                        <div class="space-y-1">
+                            <span class="text-white font-semibold block">🎬 Travel Reels</span>
+                            <span>Интерактивная лента впечатлений</span>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-white font-semibold block">🤖 AI-Гиды</span>
+                            <span>Персональный инфо-помощник</span>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-white font-semibold block">⚙️ Админ-панель</span>
+                            <span>Управление промптами и пользователями</span>
                         </div>
                     </div>
-                    <div data-aos="fade-up" data-aos-delay="400">
-                        <textarea placeholder="Что вы хотите сказать?" rows="5" name="entry.954100367"
-                            class="w-full px-4 py-3 border border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-500 focus:shadow-md hover:border-gray-700 rounded-md text-sm transition duration-300 ease-in-out"></textarea>
+                </div>
+
+                <!-- Right Column -->
+                <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+                    <div class="apple-bento rounded-3xl p-8 space-y-4">
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-[#86868b]">Стек проекта</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-full bg-white/5 text-white text-xs font-mono border border-white/10">Next.js</span>
+                            <span class="px-3 py-1.5 rounded-full bg-white/5 text-white text-xs font-mono border border-white/10">TypeScript</span>
+                            <span class="px-3 py-1.5 rounded-full bg-white/5 text-emerald-400 text-xs font-mono border border-white/10">Supabase</span>
+                            <span class="px-3 py-1.5 rounded-full bg-white/5 text-white text-xs font-mono border border-white/10">i18n</span>
+                            <span class="px-3 py-1.5 rounded-full bg-white/5 text-sky-400 text-xs font-mono border border-white/10">Docker</span>
+                            <span class="px-3 py-1.5 rounded-full bg-white/5 text-cyan-400 text-xs font-mono border border-white/10">Tailwind CSS</span>
+                            <span class="px-3 py-1.5 rounded-full bg-white/5 text-purple-400 text-xs font-mono border border-white/10">OpenAI / Claude API</span>
+                        </div>
+
+                        <div class="pt-4 flex items-center space-x-3">
+                            <a href="https://github.com/xf1st" target="_blank" rel="noopener noreferrer"
+                               class="flex-1 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold text-center border border-white/15 transition-all flex items-center justify-center space-x-1.5">
+                                <i class="ri-github-fill text-base"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://travellm.ru" target="_blank" rel="noopener noreferrer"
+                               class="flex-1 py-2.5 rounded-full bg-white text-black font-bold text-xs text-center hover:bg-slate-200 transition-all flex items-center justify-center space-x-1.5">
+                                <i class="ri-external-link-line text-base"></i>
+                                <span>Демо</span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="text-center" data-aos="zoom-in-up" data-aos-delay="500">
-                      <button type="submit"
-                        class="bg-[#3b82f6] text-white px-8 py-3 rounded-md font-medium hover:bg-[#2563eb] hover:shadow-lg transform hover:-translate-y-1 active:translate-y-0 active:shadow-none transition duration-300 ease-in-out whitespace-nowrap text-base">Отправить запрос</button>
+
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="apple-bento rounded-2xl p-4 text-center">
+                            <div class="text-xl font-bold font-mono text-white">230+</div>
+                            <div class="text-[10px] text-[#86868b] mt-1">коммитов</div>
+                        </div>
+                        <div class="apple-bento rounded-2xl p-4 text-center">
+                            <div class="text-xs font-bold font-mono text-white">SSR / CI-CD</div>
+                            <div class="text-[10px] text-[#86868b] mt-1">деплои</div>
+                        </div>
+                        <div class="apple-bento rounded-2xl p-4 text-center">
+                            <div class="text-xs font-bold font-mono text-emerald-400">Production</div>
+                            <div class="text-[10px] text-[#86868b] mt-1">готовность</div>
+                        </div>
                     </div>
-                </form>
-            </div>
-        </div>
-    </section>
-    <!-- Карта -->
-    <section class="py-16 bg-[#f9f7f4]">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">Посетить нас</h2>
-            <div class="flex justify-center mb-8" data-aos="fade-up" data-aos-delay="100">
-                <div class="flex space-x-4">
-                    <a href="https://t.me/xf1st" target="_blank" rel="noopener noreferrer"
-                        class="w-10 h-10 flex items-center justify-center bg-primary text-white hover:bg-primary/90 transition">
-                        <i class="ri-telegram-line"></i>
-                    </a>
-                    <a href="https://vk.com/maybeprincess" target="_blank" rel="noopener noreferrer"
-                        class="w-10 h-10 flex items-center justify-center bg-primary text-white hover:bg-primary/90 transition">
-                        <i class="ri-vk-line"></i>
-                    </a>
                 </div>
             </div>
-            <div class="h-64 sm:h-80 md:h-96 overflow-hidden shadow-md" data-aos="zoom-in" data-aos-delay="200">
-                <div class="w-full h-full bg-cover bg-center">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224430.4597887876!2d37.3688773!3d55.7558498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a6360222223%3A0x1cb346f234e1cfcf!2z0JzRj9GB0LrQuNCw0YHRgtC10YLRgdGC!5e0!3m2!1sru!2sru!4v1691988888888!5m2!1sru!2sru" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+        <!-- CASE 2: Sipliy Folder VPS (siplyifolder.ru) -->
+        <section id="siplyi" class="space-y-8">
+            <div class="space-y-2">
+                <span class="text-xs font-mono text-white/50 uppercase tracking-widest font-semibold">Высоконагруженный Сервис</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Sipliy Folder VPS (siplyifolder.ru)</h2>
+                <p class="text-sm text-[#86868b]">Personal VPS download manager со скоростью 1 Гбит/с + Extension MV3</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Left Column -->
+                <div class="lg:col-span-7 apple-bento rounded-3xl p-8 sm:p-10 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-cyan-400">
+                            Node.js + Chrome Extension Manifest V3
+                        </div>
+                        <h3 class="text-2xl font-bold text-white tracking-tight leading-snug">
+                            Быстрые загрузки файлов на VPS и браузерное расширение в один клик
+                        </h3>
+                        <p class="text-sm text-[#86868b] leading-relaxed">
+                            Сервис позволяет отправлять любые ссылки (HTTP, HTTPS, magnet) на личный VPS-сервер и качать их на скорости 1 Гбит/с с помощью движка aria2c (JSON-RPC). Расширение Chrome/Edge позволяет отправлять файлы на VPS прямо из контекстного меню браузера.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/10 text-xs text-[#86868b]">
+                        <div class="space-y-1">
+                            <span class="text-white font-semibold block">⚡ 1 Gbps Движок aria2c</span>
+                            <span>Скачивание тяжелых файлов по JSON-RPC</span>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-white font-semibold block">🧩 Extension Manifest V3</span>
+                            <span>Контекстное меню Chrome / Edge</span>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-white font-semibold block">🛡️ VirusTotal API</span>
+                            <span>Авто-проверка файлов на вирусы</span>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-white font-semibold block">🔔 Push & Мультиаккаунт</span>
+                            <span>Уведомления и авто-очистка</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+                    <div class="apple-bento rounded-3xl p-8 space-y-4">
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-[#86868b]">Стек проекта</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-full bg-white/5 text-emerald-400 text-xs font-mono border border-white/10">Node.js + Express</span>
+                            <span class="px-3 py-1.5 rounded-full bg-white/5 text-white text-xs font-mono border border-white/10">aria2c (JSON-RPC)</span>
+                            <span class="px-3 py-1.5 rounded-full bg-white/5 text-sky-400 text-xs font-mono border border-white/10">Chrome Extension MV3</span>
+                            <span class="px-3 py-1.5 rounded-full bg-white/5 text-white text-xs font-mono border border-white/10">VirusTotal API</span>
+                            <span class="px-3 py-1.5 rounded-full bg-white/5 text-white text-xs font-mono border border-white/10">Nginx + SSL</span>
+                        </div>
+
+                        <div class="pt-4 flex items-center space-x-3">
+                            <a href="https://github.com/xf1st/sipliy-folder-vps" target="_blank" rel="noopener noreferrer"
+                               class="flex-1 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold text-center border border-white/15 transition-all flex items-center justify-center space-x-1.5">
+                                <i class="ri-github-fill text-base"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://github.com/xf1st/sipliy-folder-vps" target="_blank" rel="noopener noreferrer"
+                               class="flex-1 py-2.5 rounded-full bg-white text-black font-bold text-xs text-center hover:bg-slate-200 transition-all flex items-center justify-center space-x-1.5">
+                                <i class="ri-code-box-line text-base"></i>
+                                <span>Код</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="apple-bento rounded-2xl p-4 text-center">
+                            <div class="text-sm font-bold font-mono text-white">1 Gbps</div>
+                            <div class="text-[10px] text-[#86868b] mt-1">скорость</div>
+                        </div>
+                        <div class="apple-bento rounded-2xl p-4 text-center">
+                            <div class="text-xs font-bold font-mono text-white">Manifest V3</div>
+                            <div class="text-[10px] text-[#86868b] mt-1">расширение</div>
+                        </div>
+                        <div class="apple-bento rounded-2xl p-4 text-center">
+                            <div class="text-xs font-bold font-mono text-emerald-400">VirusTotal</div>
+                            <div class="text-[10px] text-[#86868b] mt-1">защита</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Подвал -->
-    <footer class="bg-white py-20">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-10">
-                <div data-aos="fade-up" data-aos-delay="100" class="text-center">
-                    <h3 class="text-2xl font-bold mb-6 text-[#0046d1]">Диплом</h3>
-                    <p class="mb-3 text-[#003297] font-light text-base">
-                        <a href="https://maps.google.com/?q=140960,Москва" class="link-hover phone-mask">140960, Москва,</a>
-                    </p>
-                    <p class="text-[#003297] font-light text-base">
-                        <a href="https://maps.google.com/?q=140960,Москва" class="link-hover">Москва</a>
-                    </p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="200" class="text-center">
-                    <h3 class="text-2xl font-bold mb-6 text-[#0046d1]">Время</h3>
-                    <p class="mb-3 text-[#003297] font-light text-base">Понедельник — Пятница</p>
-                    <p class="text-[#003297] font-light text-base">С 8:00 до 22:00</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="300" class="text-center">
-                    <h3 class="text-2xl font-bold mb-6 text-[#0046d1]">Контакт</h3>
-                    <p class="mb-3 text-[#003297] font-light text-base">
-                        <a href="mailto:crybabyfckk@gmail.com" class="link-hover">xf1stads@gmail.com</a>
-                    </p>
-                    <p class="text-[#003297] font-light text-base">
-                        <a href="tel:+79009009090" class="link-hover phone-mask">(900) 900-90-90</a>
-                    </p>
-                </div>
+        </section>
+
+        <!-- APPLE SKILLS GRID -->
+        <section id="skills" class="space-y-8">
+            <div class="space-y-2">
+                <span class="text-xs font-mono text-white/50 uppercase tracking-widest font-semibold">Специализация</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Навыки и Инструменты</h2>
             </div>
-            <div class="mt-16 pt-0 text-center" data-aos="fade-up" data-aos-delay="400">
-                <p class="text-[#003297] font-light text-sm">Designed by xf1st</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <!-- Frontend -->
+                <div class="apple-bento rounded-3xl p-6 space-y-4">
+                    <div class="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center text-white text-xl">
+                        <i class="ri-layout-4-line"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Frontend</h3>
+                    <p class="text-xs text-[#86868b] leading-relaxed">Разработка интерфейсов с SSR, чистой типографикой и поддержкой мульти-язычности.</p>
+                    <div class="flex flex-wrap gap-1.5 pt-2">
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-white font-mono">Next.js</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-white font-mono">React</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-white font-mono">TypeScript</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-white font-mono">Tailwind</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-white font-mono">i18n</span>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="apple-bento rounded-3xl p-6 space-y-4">
+                    <div class="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center text-emerald-400 text-xl">
+                        <i class="ri-database-2-line"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Backend & DB</h3>
+                    <p class="text-xs text-[#86868b] leading-relaxed">Проектирование реляционных баз PostgreSQL, RLS безопасность и миграции данных.</p>
+                    <div class="flex flex-wrap gap-1.5 pt-2">
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-emerald-400 font-mono">Supabase</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-white font-mono">Node.js</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-white font-mono">PostgreSQL</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-white font-mono">REST API</span>
+                    </div>
+                </div>
+
+                <!-- AI -->
+                <div class="apple-bento rounded-3xl p-6 space-y-4">
+                    <div class="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center text-purple-400 text-xl">
+                        <i class="ri-brain-line"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">AI Integration</h3>
+                    <p class="text-xs text-[#86868b] leading-relaxed">Интеграция LLM моделей (Claude, GPT), Prompt Caching и потоковый вызов (SSE).</p>
+                    <div class="flex flex-wrap gap-1.5 pt-2">
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-purple-300 font-mono">Claude API</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-purple-300 font-mono">OpenAI</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-white font-mono">Prompt Cache</span>
+                    </div>
+                </div>
+
+                <!-- DevOps -->
+                <div class="apple-bento rounded-3xl p-6 space-y-4">
+                    <div class="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center text-sky-400 text-xl">
+                        <i class="ri-cloud-line"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">DevOps</h3>
+                    <p class="text-xs text-[#86868b] leading-relaxed">Контейнеризация сервисов в Docker и автоматизация сборки на Vercel/VPS.</p>
+                    <div class="flex flex-wrap gap-1.5 pt-2">
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-sky-300 font-mono">Docker</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-white font-mono">Git</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-white font-mono">Vercel</span>
+                        <span class="px-2.5 py-1 rounded-md bg-white/5 text-xs text-white font-mono">VPS</span>
+                    </div>
+                </div>
+
             </div>
-        </div>
+        </section>
+
+        <!-- APPLE CONTACT -->
+        <section id="contact" class="apple-bento rounded-3xl p-10 sm:p-14 text-center space-y-6">
+            <h2 class="text-3xl font-extrabold text-white tracking-tight">Связаться со мной</h2>
+            <p class="text-sm sm:text-base text-[#86868b] max-w-md mx-auto">
+                Открыт к предложениям по Full-Stack разработке и интеграции искусственного интеллекта.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+                <a href="https://t.me/xf1st" target="_blank" rel="noopener noreferrer"
+                   class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white text-black font-bold text-sm hover:bg-slate-200 transition-all flex items-center justify-center space-x-2">
+                    <i class="ri-telegram-fill text-lg text-sky-500"></i>
+                    <span>Написать в Telegram (@xf1st)</span>
+                </a>
+
+                <button onclick="copyEmail()" id="email-btn"
+                        class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-semibold border border-white/15 transition-all flex items-center justify-center space-x-2">
+                    <i class="ri-mail-send-line text-slate-300 text-base" id="email-icon"></i>
+                    <span id="email-text">Скопировать Email</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 py-8 text-center text-xs text-[#86868b]">
+        © 2026 xf1st. Next.js, Supabase & Node.js. Designed with Apple principles.
     </footer>
-    <!-- Хлебные крошки -->
-    <div class="bg-gray-100 py-2">
-        <div class="container mx-auto px-4">
-            <nav class="text-sm" aria-label="Хлебные крошки">
-                <ol class="flex items-center space-x-2">
-                    <li class="flex items-center">
-                        <a href="#" class="text-primary hover:text-primary/80">Главная</a>
-                        <i class="ri-arrow-right-s-line mx-2 text-gray-400"></i>
-                    </li>
-                    <li class="text-gray-600" aria-current="page">Академический сервис</li>
-                </ol>
-            </nav>
-        </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-900/90 border border-white/15 text-white px-4 py-2.5 rounded-full flex items-center space-x-2 text-xs shadow-2xl pointer-events-none">
+        <i class="ri-checkbox-circle-fill text-base text-emerald-400"></i>
+        <span id="toast-msg">Email скопирован в буфер обмена</span>
     </div>
 
-    <!-- Кнопка "Наверх" -->
-    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90" title="Наверх">
-        <i class="ri-arrow-up-line ri-xl"></i>
-    </button>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script>
-      AOS.init({
-        duration: 800,
-        once: true
-      });
-
-      function showToast(message, type = 'success') {
-          const toast = Toastify({
-              text: message,
-              duration: 5000,
-              gravity: "top",
-              position: "right",
-              style: {
-                  background: "linear-gradient(to right, #00236a, #002f8f)",
-                  borderRadius: "0",
-                  boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
-              },
-              onClick: function() {
-                  toast.hideToast();
-              }
-          });
-
-          const closeButton = document.createElement('span');
-          closeButton.className = 'toast-close';
-          closeButton.innerHTML = '<i class="ri-close-line"></i>';
-          closeButton.onclick = function(e) {
-              e.stopPropagation();
-              toast.hideToast();
-          };
-
-          toast.showToast();
-          const toastElement = document.querySelector('.toastify:last-child');
-          if (toastElement) {
-              toastElement.appendChild(closeButton);
-          }
-      }
-
-      document.addEventListener('DOMContentLoaded', function() {
-          const forms = document.querySelectorAll('form');
-          forms.forEach(form => {
-              form.addEventListener('submit', function(e) {
-                  e.preventDefault();
-                  showToast("Ваше сообщение отправлено! Мы свяжемся с вами в ближайшее время.");
-                  setTimeout(() => form.submit(), 2000);
-              });
-          });
-
-          const socialButtons = document.querySelectorAll('a[target="_blank"]');
-          socialButtons.forEach(button => {
-              button.addEventListener('click', function(e) {
-                  e.preventDefault();
-                  const href = this.getAttribute('href');
-                  showToast("Открываем ссылку в новом окне...");
-                  setTimeout(() => window.open(href, '_blank'), 500);
-              });
-          });
-
-          const contactLinks = document.querySelectorAll('.contact-link');
-          contactLinks.forEach(link => {
-              link.addEventListener('click', function(e) {
-                  e.preventDefault();
-                  const href = this.getAttribute('href');
-                  if (href.startsWith('mailto:')) {
-                      showToast("Открываем почтовый клиент...");
-                  } else if (href.startsWith('tel:')) {
-                      showToast("Начинаем звонок...");
-                  }
-                  setTimeout(() => window.location.href = href, 500);
-              });
-          });
-      });
-
-      document.addEventListener('DOMContentLoaded', function () {
-          const menuButton = document.getElementById('mobile-menu-button');
-          const mobileMenu = document.getElementById('mobile-menu');
-          const menuIcon = menuButton ? menuButton.querySelector('i') : null;
-
-          if (menuButton && mobileMenu && menuIcon) {
-              menuButton.addEventListener('click', () => {
-                  const isHidden = mobileMenu.classList.toggle('hidden');
-                  
-                  if (!isHidden) {
-                      menuIcon.classList.remove('ri-menu-line');
-                      menuIcon.classList.add('ri-close-line');
-                  } else {
-                      menuIcon.classList.remove('ri-close-line');
-                      menuIcon.classList.add('ri-menu-line');
-                  }
-              });
-
-              const mobileLinks = mobileMenu.querySelectorAll('a');
-              mobileLinks.forEach(link => {
-                  link.addEventListener('click', () => {
-                      mobileMenu.classList.add('hidden'); 
-                      menuIcon.classList.remove('ri-close-line');
-                      menuIcon.classList.add('ri-menu-line');
-                  });
-              });
-          }
-      });
-
-      // Плавная прокрутка к якорям
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-              e.preventDefault();
-              const target = document.querySelector(this.getAttribute('href'));
-              if (target) {
-                  target.scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start'
-                  });
-              }
-          });
-      });
-
-      // Кнопка "Наверх"
-      const scrollToTopButton = document.getElementById('scrollToTop');
-      
-      window.addEventListener('scroll', () => {
-          if (window.pageYOffset > 300) {
-              scrollToTopButton.classList.remove('opacity-0', 'invisible');
-              scrollToTopButton.classList.add('opacity-100', 'visible');
-          } else {
-              scrollToTopButton.classList.add('opacity-0', 'invisible');
-              scrollToTopButton.classList.remove('opacity-100', 'visible');
-          }
-      });
-
-      scrollToTopButton.addEventListener('click', () => {
-          window.scrollTo({
-              top: 0,
-              behavior: 'smooth'
-          });
-      });
-
-      // Ленивая загрузка изображений
-      document.addEventListener('DOMContentLoaded', function() {
-          const lazyImages = document.querySelectorAll('img[data-src]');
-          
-          const imageObserver = new IntersectionObserver((entries, observer) => {
-              entries.forEach(entry => {
-                  if (entry.isIntersecting) {
-                      const img = entry.target;
-                      img.src = img.dataset.src;
-                      img.removeAttribute('data-src');
-                      observer.unobserve(img);
-                  }
-              });
-          });
-
-          lazyImages.forEach(img => imageObserver.observe(img));
-      });
-
-      // Обработка кликов по контактной информации
-      document.addEventListener('DOMContentLoaded', function() {
-          // Обработка клика по адресу
-          const addressLinks = document.querySelectorAll('a[href*="maps.google.com"]');
-          addressLinks.forEach(link => {
-              link.addEventListener('click', function(e) {
-                  e.preventDefault();
-                  const address = this.getAttribute('href').split('q=')[1];
-                  window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`, '_blank');
-              });
-          });
-
-          // Обработка клика по телефону
-          const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-          phoneLinks.forEach(link => {
-              link.addEventListener('click', function(e) {
-                  e.preventDefault();
-                  const phone = this.getAttribute('href').replace('tel:', '');
-                  window.open(`tel:${phone}`, '_self');
-              });
-          });
-
-          // Обработка клика по email
-          const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
-          emailLinks.forEach(link => {
-              link.addEventListener('click', function(e) {
-                  e.preventDefault();
-                  const email = this.getAttribute('href').replace('mailto:', '');
-                  window.open(`mailto:${email}`, '_self');
-              });
-          });
-      });
+        function copyEmail() {
+            const email = "contact@xf1st.ru";
+            navigator.clipboard.writeText(email).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                document.getElementById('email-text').textContent = "Скопировано!";
+                document.getElementById('email-icon').className = "ri-check-line text-emerald-400 text-base";
+                setTimeout(() => {
+                    toast.classList.add('translate-y-20', 'opacity-0');
+                    document.getElementById('email-text').textContent = "Скопировать Email";
+                    document.getElementById('email-icon').className = "ri-mail-send-line text-slate-300 text-base";
+                }, 3000);
+            });
+        }
     </script>
 </body>
-
 </html>
