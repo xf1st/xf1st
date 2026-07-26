@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://xf1st.ru/sitemap.xml
+Sitemap: https://xf1st.com/sitemap.xml

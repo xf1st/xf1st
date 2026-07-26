@@ -13,27 +13,29 @@
     
     <!-- Primary Meta Tags -->
     <meta name="title" content="xf1st — Full-Stack Developer & AI Integration Engineer">
-    <meta name="description" content="Портфолио xf1st. Разработка высоконагруженных веб-сервисов на Next.js, Supabase и Node.js. Интеграция LLM (Claude, OpenAI API). Создатель TravelLM (.ru) и Sipliy Folder VPS (siplyifolder.ru).">
+    <meta name="description" content="Портфолио xf1st: разработка масштабируемых веб-сервисов и AI-функций на Next.js, Node.js и PostgreSQL — от архитектуры до запуска.">
     <meta name="keywords" content="xf1st, Full-Stack Developer, AI Integration Engineer, Next.js, Supabase, Node.js, Claude API, OpenAI API, TravelLM, Sipliy Folder VPS, TypeScript, React, Docker, Tailwind CSS">
     <meta name="author" content="xf1st">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://xf1st.ru/">
+    <link rel="canonical" href="https://xf1st.com/">
 
     <!-- Open Graph / Facebook / Telegram -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://xf1st.ru/">
+    <meta property="og:url" content="https://xf1st.com/">
     <meta property="og:title" content="xf1st — Full-Stack Developer & AI Integration Engineer">
     <meta property="og:description" content="Разработка масштабируемых веб-сервисов на Next.js & Supabase с интеграцией искусственного интеллекта (Claude, OpenAI API). Создатель TravelLM и Sipliy Folder VPS.">
-    <meta property="og:image" content="https://xf1st.ru/assets/img/travellm-real.png">
+    <meta property="og:image" content="https://xf1st.com/assets/img/travellm-real.png">
+    <meta property="og:image:alt" content="Интерфейс AI-платформы TravelLM">
     <meta property="og:site_name" content="xf1st Portfolio">
     <meta property="og:locale" content="ru_RU">
 
     <!-- Twitter / Telegram Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://xf1st.ru/">
+    <meta name="twitter:url" content="https://xf1st.com/">
     <meta name="twitter:title" content="xf1st — Full-Stack Developer & AI Integration Engineer">
     <meta name="twitter:description" content="Разработка масштабируемых веб-сервисов на Next.js & Supabase с интеграцией искусственного интеллекта.">
-    <meta name="twitter:image" content="https://xf1st.ru/assets/img/travellm-real.png">
+    <meta name="twitter:image" content="https://xf1st.com/assets/img/travellm-real.png">
+    <meta name="twitter:image:alt" content="Интерфейс AI-платформы TravelLM">
 
     <!-- Schema.org JSON-LD Structured Data for Search Engines -->
     <script type="application/ld+json">
@@ -42,7 +44,7 @@
       "@type": "Person",
       "name": "xf1st",
       "jobTitle": "Full-Stack Developer & AI Integration Engineer",
-      "url": "https://xf1st.ru/",
+      "url": "https://xf1st.com/",
       "sameAs": [
         "https://github.com/xf1st",
         "https://t.me/xf1st"
@@ -83,28 +85,8 @@
     <!-- Remixicon Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Rubik', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        appleBlack: '#000000',
-                        appleDark: '#0a0a0c',
-                        appleCard: '#121215',
-                        appleBorder: 'rgba(255, 255, 255, 0.1)',
-                        appleSubtext: '#86868b',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Локальная production-сборка Tailwind -->
+    <link rel="stylesheet" href="assets/css/styles.css">
 
     <style>
         body {
@@ -112,6 +94,33 @@
             background-color: #000000;
             color: #f5f5f7;
             overflow-x: hidden;
+        }
+
+        .skip-link {
+            position: fixed;
+            top: 0.75rem;
+            left: 0.75rem;
+            z-index: 100;
+            transform: translateY(-200%);
+            border-radius: 9999px;
+            background: #ffffff;
+            color: #000000;
+            padding: 0.65rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+
+        :focus-visible {
+            outline: 3px solid #38bdf8;
+            outline-offset: 4px;
+        }
+
+        #mobile-menu[hidden] {
+            display: none;
         }
 
         /* Apple Glass Header */
@@ -175,6 +184,7 @@
 </head>
 
 <body class="relative min-h-screen antialiased selection:bg-white selection:text-black">
+    <a class="skip-link" href="#main-content">Перейти к основному содержимому</a>
 
     <!-- HEADER / NAVIGATION -->
     <header class="sticky top-0 z-50 apple-header">
@@ -186,26 +196,35 @@
             </a>
 
             <!-- Desktop Nav Links -->
-            <nav class="hidden sm:flex items-center space-x-8 text-xs font-medium text-[#86868b]">
-                <a href="#hero" class="hover:text-white transition-colors">Обзор</a>
-                <a href="#travellm" class="hover:text-white transition-colors">TravelLM</a>
-                <a href="#siplyi" class="hover:text-white transition-colors">Sipliy Folder VPS</a>
+            <nav aria-label="Основная навигация" class="hidden sm:flex items-center space-x-8 text-xs font-medium text-[#86868b]">
+                <a href="#travellm" class="hover:text-white transition-colors">Проекты</a>
                 <a href="#skills" class="hover:text-white transition-colors">Навыки</a>
-                <a href="#contact" class="hover:text-white transition-colors">Связь</a>
+                <a href="#contact" class="hover:text-white transition-colors">Контакты</a>
             </nav>
 
-            <!-- Telegram Button -->
-            <div>
+            <div class="flex items-center gap-2">
                 <a href="https://t.me/xf1st" target="_blank" rel="noopener noreferrer" 
-                   class="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-medium border border-white/15 transition-all">
+                   class="hidden sm:inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-medium border border-white/15 transition-all">
                     <i class="ri-telegram-fill text-sky-400"></i>
                     <span>Telegram</span>
                 </a>
+                <button id="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu"
+                        class="sm:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white border border-white/15"
+                        aria-label="Открыть меню">
+                    <i class="ri-menu-line text-lg" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
+        <nav id="mobile-menu" hidden aria-label="Мобильная навигация" class="sm:hidden border-t border-white/10 px-6 py-4">
+            <div class="max-w-5xl mx-auto grid grid-cols-3 gap-2 text-center text-sm">
+                <a href="#travellm" class="rounded-xl px-2 py-3 hover:bg-white/10">Проекты</a>
+                <a href="#skills" class="rounded-xl px-2 py-3 hover:bg-white/10">Навыки</a>
+                <a href="#contact" class="rounded-xl px-2 py-3 hover:bg-white/10">Контакты</a>
+            </div>
+        </nav>
     </header>
 
-    <main class="relative z-10 max-w-5xl mx-auto px-6 space-y-24 sm:space-y-32 py-16 sm:py-24">
+    <main id="main-content" tabindex="-1" class="relative z-10 max-w-5xl mx-auto px-6 space-y-24 sm:space-y-32 py-16 sm:py-24">
 
         <!-- HERO SECTION -->
         <section id="hero" class="text-center max-w-3xl mx-auto space-y-8 pt-4">
@@ -218,25 +237,25 @@
 
             <!-- Brutal Headline -->
             <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.08] apple-silver-text">
-                Full-Stack Developer.<br>AI Integration Engineer.
+                Разрабатываю веб-сервисы и AI-функции — от интерфейса до продакшена.
             </h1>
 
             <!-- Subtitle -->
             <p class="text-base sm:text-lg text-[#86868b] leading-relaxed max-w-2xl mx-auto font-normal">
-                Проектирование и разработка высоконагруженных веб-сервисов на <span class="text-white font-medium">Next.js</span>, <span class="text-white font-medium">Supabase</span> и <span class="text-white font-medium">Node.js</span> с интеграцией языковых моделей (<span class="text-white font-medium">Claude, OpenAI API</span>).
+                <span class="text-white font-medium">Next.js, Node.js и PostgreSQL.</span> Проектирую архитектуру, интегрирую языковые модели и самостоятельно довожу продукт до запуска.
             </p>
 
             <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-3">
                 <a href="#travellm" 
                    class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white text-black font-bold text-sm hover:bg-slate-200 transition-all shadow-lg shadow-white/10">
-                    Посмотреть проекты
+                    Смотреть кейсы
                 </a>
 
                 <a href="https://t.me/xf1st" target="_blank" rel="noopener noreferrer"
                    class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white/[0.08] hover:bg-white/[0.15] text-white font-bold text-sm border border-white/15 transition-all flex items-center justify-center space-x-2">
                     <i class="ri-telegram-fill text-sky-400 text-base"></i>
-                    <span>Написать в Telegram</span>
+                    <span>Обсудить проект</span>
                 </a>
             </div>
 
@@ -265,14 +284,17 @@
                 <div class="lg:col-span-7 apple-bento rounded-3xl p-8 sm:p-10 space-y-6 flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-emerald-400">
-                            Non-commercial Production Project
+                            Некоммерческий продукт в эксплуатации
                         </div>
                         <h3 class="text-2xl font-bold text-white tracking-tight leading-snug">
                             Генерация персонализированных маршрутов с помощью нейросетей
                         </h3>
-                        <p class="text-sm text-[#86868b] leading-relaxed">
-                            Полный цикл разработки с нуля. Сервис позволяет генерировать кастомные туристические маршруты, имеет встроенную медиаленту впечатлений (Travel Reels), систему персональных AI-гидов и полноценную панель администратора для управления промптами и контентом.
-                        </p>
+                        <div class="space-y-3 text-sm text-[#86868b] leading-relaxed">
+                            <p><strong class="text-white">Задача:</strong> собрать в одном сервисе создание персонального маршрута, подбор впечатлений и помощь AI-гида.</p>
+                            <p><strong class="text-white">Моя роль:</strong> архитектура, интерфейс, серверная логика, база данных, система промптов и деплой.</p>
+                            <p><strong class="text-white">Решение:</strong> Next.js-приложение с PostgreSQL, потоковыми ответами LLM, медиалентой и админ-панелью для управления промптами и контентом.</p>
+                            <p><strong class="text-white">Результат:</strong> один продукт объединяет 4 пользовательских модуля и работает в двух доменных версиях.</p>
+                        </div>
                     </div>
 
                     <!-- Apple UI Browser Mockup with REAL Screenshot -->
@@ -329,10 +351,10 @@
                         </div>
 
                         <div class="pt-4 flex items-center space-x-3">
-                            <a href="https://github.com/xf1st" target="_blank" rel="noopener noreferrer"
+                            <a href="#travellm-architecture"
                                class="flex-1 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold text-center border border-white/15 transition-all flex items-center justify-center space-x-1.5">
-                                <i class="ri-github-fill text-base"></i>
-                                <span>GitHub</span>
+                                <i class="ri-flow-chart text-base"></i>
+                                <span>Архитектура</span>
                             </a>
                             <a href="https://travellm.ru" target="_blank" rel="noopener noreferrer"
                                class="flex-1 py-2.5 rounded-full bg-white text-black font-bold text-xs text-center hover:bg-slate-200 transition-all flex items-center justify-center space-x-1.5">
@@ -340,20 +362,24 @@
                                 <span>Демо</span>
                             </a>
                         </div>
+                        <p class="text-[11px] text-[#86868b]">Исходный код TravelLM находится в закрытом репозитории.</p>
+                        <div id="travellm-architecture" class="scroll-mt-24 rounded-2xl bg-black/20 p-4 text-xs text-[#86868b] leading-relaxed">
+                            <strong class="text-white">Контур решения:</strong> Next.js отвечает за интерфейс и серверный рендеринг, Supabase — за PostgreSQL, авторизацию и политики доступа, API языковых моделей — за генерацию маршрутов и ответы AI-гидов. Деплой контейнеризирован.
+                        </div>
                     </div>
 
                     <div class="grid grid-cols-3 gap-3">
                         <div class="apple-bento rounded-2xl p-4 text-center">
-                            <div class="text-xl font-bold font-mono text-white">230+</div>
-                            <div class="text-[10px] text-[#86868b] mt-1">коммитов</div>
+                            <div class="text-xl font-bold font-mono text-white">4</div>
+                            <div class="text-[10px] text-[#86868b] mt-1">модуля продукта</div>
                         </div>
                         <div class="apple-bento rounded-2xl p-4 text-center">
-                            <div class="text-xs font-bold font-mono text-white">SSR / CI-CD</div>
-                            <div class="text-[10px] text-[#86868b] mt-1">деплои</div>
+                            <div class="text-xs font-bold font-mono text-white">2 домена</div>
+                            <div class="text-[10px] text-[#86868b] mt-1">версии сервиса</div>
                         </div>
                         <div class="apple-bento rounded-2xl p-4 text-center">
-                            <div class="text-xs font-bold font-mono text-emerald-400">Production</div>
-                            <div class="text-[10px] text-[#86868b] mt-1">готовность</div>
+                            <div class="text-xs font-bold font-mono text-emerald-400">1 панель</div>
+                            <div class="text-[10px] text-[#86868b] mt-1">контроль контента</div>
                         </div>
                     </div>
                 </div>
@@ -363,9 +389,9 @@
         <!-- CASE 2: Sipliy Folder VPS (siplyifolder.ru) -->
         <section id="siplyi" class="space-y-8">
             <div class="space-y-2">
-                <span class="text-xs font-mono text-white/50 uppercase tracking-widest font-semibold">Высоконагруженный Сервис</span>
+                <span class="text-xs font-mono text-white/50 uppercase tracking-widest font-semibold">Масштабируемый сервис</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Sipliy Folder VPS (siplyifolder.ru)</h2>
-                <p class="text-sm text-[#86868b]">Personal VPS download manager со скоростью 1 Гбит/с + Extension MV3</p>
+                <p class="text-sm text-[#86868b]">Менеджер загрузок на личный VPS со скоростью до 1 Гбит/с и расширением Manifest V3</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -378,9 +404,12 @@
                         <h3 class="text-2xl font-bold text-white tracking-tight leading-snug">
                             Быстрые загрузки файлов на VPS и браузерное расширение в один клик
                         </h3>
-                        <p class="text-sm text-[#86868b] leading-relaxed">
-                            Сервис позволяет отправлять любые ссылки (HTTP, HTTPS, magnet) на личный VPS-сервер и качать их на скорости 1 Гбит/с с помощью движка aria2c (JSON-RPC). Расширение Chrome/Edge позволяет отправлять файлы на VPS прямо из контекстного меню браузера.
-                        </p>
+                        <div class="space-y-3 text-sm text-[#86868b] leading-relaxed">
+                            <p><strong class="text-white">Задача:</strong> переносить загрузки с рабочего устройства на VPS без ручного входа на сервер.</p>
+                            <p><strong class="text-white">Моя роль:</strong> backend, веб-интерфейс, браузерное расширение и настройка VPS.</p>
+                            <p><strong class="text-white">Решение:</strong> Node.js управляет aria2c по JSON-RPC, расширение отправляет ссылку из контекстного меню, VirusTotal автоматически проверяет файлы.</p>
+                            <p><strong class="text-white">Результат:</strong> HTTP-, HTTPS- и magnet-ссылки отправляются на VPS в один клик; поддерживаются Chrome и Edge, канал сервера — до 1 Гбит/с.</p>
+                        </div>
                     </div>
 
                     <!-- Apple UI Browser Mockup with REAL Screenshot -->
@@ -435,10 +464,10 @@
                         </div>
 
                         <div class="pt-4 flex items-center space-x-3">
-                            <a href="https://github.com/xf1st/sipliy-folder-vps" target="_blank" rel="noopener noreferrer"
+                            <a href="https://siplyifolder.ru/cloud" target="_blank" rel="noopener noreferrer"
                                class="flex-1 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold text-center border border-white/15 transition-all flex items-center justify-center space-x-1.5">
-                                <i class="ri-github-fill text-base"></i>
-                                <span>GitHub</span>
+                                <i class="ri-external-link-line text-base"></i>
+                                <span>Демо</span>
                             </a>
                             <a href="https://github.com/xf1st/sipliy-folder-vps" target="_blank" rel="noopener noreferrer"
                                class="flex-1 py-2.5 rounded-full bg-white text-black font-bold text-xs text-center hover:bg-slate-200 transition-all flex items-center justify-center space-x-1.5">
@@ -564,7 +593,7 @@
 
     <!-- FOOTER -->
     <footer class="border-t border-white/10 py-8 text-center text-xs text-[#86868b]">
-        © 2026 xf1st. Next.js, Supabase & Node.js. Designed with Apple principles.
+        © 2026 xf1st. Спроектировано и разработано xf1st.
     </footer>
 
     <!-- Toast Notification -->
@@ -588,6 +617,26 @@
                 }, 3000);
             });
         }
+
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', String(!isOpen));
+            menuButton.setAttribute('aria-label', isOpen ? 'Открыть меню' : 'Закрыть меню');
+            menuButton.querySelector('i').className = isOpen ? 'ri-menu-line text-lg' : 'ri-close-line text-lg';
+            mobileMenu.hidden = isOpen;
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.setAttribute('aria-label', 'Открыть меню');
+                menuButton.querySelector('i').className = 'ri-menu-line text-lg';
+                mobileMenu.hidden = true;
+            });
+        });
     </script>
 </body>
 </html>

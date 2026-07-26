@@ -1,0 +1,11 @@
+{
+  "name": "xf1st-portfolio",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i ./src/styles.css -o ./assets/css/styles.css --minify",
+    "dev": "tailwindcss -i ./src/styles.css -o ./assets/css/styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
