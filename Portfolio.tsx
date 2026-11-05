@@ -4,7 +4,7 @@ export default function Portfolio() {
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('contact@xf1st.ru');
+    navigator.clipboard.writeText('crybabyfckk@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 3000);
   };
