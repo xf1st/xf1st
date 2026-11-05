@@ -108,13 +108,12 @@ export default function Portfolio() {
                   Генерация персонализированных маршрутов с помощью нейросетей
                 </h3>
                 <p className="text-sm text-[#86868b] leading-relaxed">
-                  Полный цикл разработки с нуля. Сервис позволяет генерировать кастомные туристические маршруты, имеет встроенную медиаленту впечатлений (Travel Reels), систему персональных AI-гидов и полноценную панель администратора для управления промптами и контентом.
+                  Полный цикл разработки с нуля. Сервис позволяет генерировать кастомные туристические маршруты, имеет систему персональных AI-гидов и полноценную панель администратора для управления промптами и контентом.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/10 text-xs text-[#86868b]">
                 <div className="space-y-1"><span className="text-white font-semibold block">🗺️ AI-Маршруты</span><span>Учет бюджета, локации и интересов</span></div>
-                <div className="space-y-1"><span className="text-white font-semibold block">🎬 Travel Reels</span><span>Интерактивная лента впечатлений</span></div>
                 <div className="space-y-1"><span className="text-white font-semibold block">🤖 AI-Гиды</span><span>Персональный инфо-помощник</span></div>
                 <div className="space-y-1"><span className="text-white font-semibold block">⚙️ Админ-панель</span><span>Управление промптами и пользователями</span></div>
               </div>
