@@ -30,7 +30,7 @@ export default function Portfolio() {
 
           <div>
             <a
-              href="https://t.me/xf1st"
+              href="https://t.me/myszf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-medium border border-white/15 transition-all"
@@ -69,7 +69,7 @@ export default function Portfolio() {
             </a>
 
             <a
-              href="https://t.me/xf1st"
+              href="https://t.me/myszf"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white/[0.08] hover:bg-white/[0.15] text-white font-bold text-sm border border-white/15 transition-all flex items-center justify-center space-x-2"
@@ -323,13 +323,13 @@ export default function Portfolio() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <a
-              href="https://t.me/xf1st"
+              href="https://t.me/myszf"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white text-black font-bold text-sm hover:bg-slate-200 transition-all flex items-center justify-center space-x-2"
             >
               <i className="ri-telegram-fill text-lg text-sky-500"></i>
-              <span>Написать в Telegram (@xf1st)</span>
+              <span>Написать в Telegram (@myszf)</span>
             </a>
 
             <button
